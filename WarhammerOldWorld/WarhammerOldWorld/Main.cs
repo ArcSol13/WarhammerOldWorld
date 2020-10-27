@@ -4,6 +4,9 @@ using System.Reactive.Subjects;
 using TaleWorlds.Engine;
 using System.Reactive.Linq;
 using System.Collections.Generic;
+using TaleWorlds.InputSystem;
+using WarhammerOldWorld.ObjectManagment;
+using TaleWorlds.Core;
 
 namespace WarhammerOldWorld
 {
@@ -30,11 +33,18 @@ namespace WarhammerOldWorld
             base.OnApplicationTick(dt);
             foreach (var module in activeModules)
                 module.OnUpdate();
+
+            if (Input.IsKeyDown(InputKey.G))
+            {
+                var a = new CharacterObjectManager();
+                a.Instantiate();
+            }
         }
 
         protected override void OnSubModuleLoad()
         {
             Instance = this;
+
 
         }
 
@@ -44,6 +54,10 @@ namespace WarhammerOldWorld
         /// <returns></returns>
         public IObservable<Scene> SceneChangeObservable() => sceneSubject.AsObservable();
         public Scene GetCurrentScene() => sceneSubject.Value;
-
+        /// <summary>
+        /// Returns player character
+        /// </summary>
+        /// <returns></returns>
+        public Agent GetMainCharacter() => Agent.Main;
     }
 }
