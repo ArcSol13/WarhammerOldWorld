@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
-using TaleWorlds.MountAndBlade;
 using TaleWorlds.ObjectSystem;
-using TaleWorlds.CampaignSystem.Encyclopedia;
-using TaleWorlds.CampaignSystem.Encyclopedia.Pages;
-using System.Linq;
 
 namespace WarhammerOldWorld.ObjectManagment
 {
@@ -43,83 +40,107 @@ namespace WarhammerOldWorld.ObjectManagment
             }
         }
         public abstract Type GetObjectType();
-
-        public abstract void Instantiate();
-
-        public ObjectManager<T> Instance { get; private set; }
         protected T InstantiateInternal() => Game.Current.ObjectManager.CreateObject<T>();
         protected T InstantiateInternal(string stringID) => Game.Current.ObjectManager.CreateObject<T>(stringID);
-        protected abstract void Deserialize(T obj);
+        public abstract void Deserialize(T obj);
         protected abstract string PathToXML();
         public abstract void Destroy(T obj);
+
+        public T Instantiate()
+        {
+            var result = MBObjectManager.Instance.CreateObjectFromXmlNode(xmlNodes.GetRandomElement());
+            try
+            {
+                if (result is BasicCharacterObject)
+                    (result as BasicCharacterObject).Name = new TaleWorlds.Localization.TextObject("Spawned Character!");
+                return result as T;
+            }
+            catch
+            {
+                throw new Exception("Trying to instantiate " + result.ToString() + " with type " + typeof(T) + ", wrong type!");
+            }
+        }
     }
 
 
+    public class BasicCharacterObjectManager : ObjectManager<BasicCharacterObject>
+    {
+        private static BasicCharacterObjectManager _instance;
+        public static BasicCharacterObjectManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new BasicCharacterObjectManager();
+                return _instance;
+            }
+        }
+        List<XmlNode> heroNodes = new List<XmlNode>();
+        public override void Destroy(BasicCharacterObject obj)
+        {
+        }
+        public override Type GetObjectType() => typeof(BasicCharacterObject);
+
+        protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "lords.xml");
+        
+        public override void Deserialize(BasicCharacterObject obj)
+        {
+            var character = obj;
+            character.Deserialize(Game.Current.ObjectManager, xmlNodes.GetRandomElement());
+        }
+    }
+
     public class CharacterObjectManager : ObjectManager<CharacterObject>
     {
-        List<XmlNode> heroNodes = new List<XmlNode>();
+        private static CharacterObjectManager _instance;
+        public static CharacterObjectManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CharacterObjectManager();
+                return _instance;
+            }
+        }
+        public override void Deserialize(CharacterObject obj)
+        {
+            obj.Deserialize(MBObjectManager.Instance,xmlNodes.GetRandomElement());
+        }
+
         public override void Destroy(CharacterObject obj)
         {
         }
         public override Type GetObjectType() => typeof(CharacterObject);
 
         protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "lords.xml");
-        
-        string PathToHeroesXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "heroes.xml");
-        protected override void LoadXmls()
+
+    }
+
+    public class HeroObjectManager : ObjectManager<Hero>
+    {
+        private static HeroObjectManager _instance;
+        public static HeroObjectManager Instance
         {
-            base.LoadXmls();
-            XmlDocument doc = new XmlDocument();
-            doc.Load(PathToHeroesXML());
-            try
+            get
             {
-                foreach (XmlNode node in doc.DocumentElement)
-                {
-                    if (node.NodeType == XmlNodeType.Comment)
-                        continue;
-
-                    heroNodes.Add(node);
-                }
-            }
-            catch
-            {
-
-            }
-
-        }
-
-        public override void Instantiate()
-        {
-            var character = InstantiateInternal();
-            character.Initialize();
-            Deserialize(character);
-            //Test purposes only :P
-            character.Name = new TaleWorlds.Localization.TextObject("IMROBERTSSLAVEFOREVER");
-            Game.Current.ObjectManager.RegisterObject(character);
-        }
-
-        protected override void Deserialize(CharacterObject obj)
-        {
-            var character = obj;
-            var node = xmlNodes.GetRandomElement();
-            character.Deserialize(Game.Current.ObjectManager, node);
-            character.InitializeHeroBasicCharacterOnAfterLoad(character, character.Name);
-            if (character.IsHero)
-            {
-                try
-                {
-
-                    var myHero = heroNodes.Where((x) => x.Attributes[0].Value == character.StringId).First();
-                    character.HeroObject.Deserialize(Game.Current.ObjectManager, myHero);
-                    character.HeroObject.Init();
-                    character.HeroObject.Initialize();
-                }
-                catch
-                {
-                    throw new Exception("Character is a hero but is not contained in heroes.xml");
-                }
+                if (_instance == null)
+                    _instance = new HeroObjectManager();
+                return _instance;
             }
         }
+        public override void Deserialize(Hero obj)
+        {
+            obj.Deserialize(MBObjectManager.Instance, xmlNodes.GetRandomElement());
+        }
+
+        public override void Destroy(Hero obj)
+        {
+        }
+
+        public override Type GetObjectType() => typeof(Hero);
+
+        protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "heroes.xml");
+
     }
 
 
