@@ -19,13 +19,6 @@ namespace WarhammerOldWorld.ObjectManagment
         {
             LoadXmls();
         }
-
-        public XmlNode GetXmlByID(string id)
-        {
-            XmlNode resultNode = xmlNodes.Where((x) => x.Attributes[0].Value == id).FirstOrDefault();
-            return resultNode;
-        }
-
         protected List<XmlNode> xmlNodes = new List<XmlNode>();
         protected virtual void LoadXmls()
         {
@@ -49,7 +42,7 @@ namespace WarhammerOldWorld.ObjectManagment
         public abstract Type GetObjectType();
         protected T InstantiateInternal() => Game.Current.ObjectManager.CreateObject<T>();
         protected T InstantiateInternal(string stringID) => Game.Current.ObjectManager.CreateObject<T>(stringID);
-        public void Deserialize(T obj, XmlNode node) => obj.Deserialize(MBObjectManager.Instance, node);
+        public abstract void Deserialize(T obj);
         protected abstract string PathToXML();
         public abstract void Destroy(T obj);
 
@@ -90,6 +83,11 @@ namespace WarhammerOldWorld.ObjectManagment
 
         protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "lords.xml");
         
+        public override void Deserialize(BasicCharacterObject obj)
+        {
+            var character = obj;
+            character.Deserialize(Game.Current.ObjectManager, xmlNodes.GetRandomElement());
+        }
     }
 
     public class CharacterObjectManager : ObjectManager<CharacterObject>
@@ -104,6 +102,11 @@ namespace WarhammerOldWorld.ObjectManagment
                 return _instance;
             }
         }
+        public override void Deserialize(CharacterObject obj)
+        {
+            obj.Deserialize(MBObjectManager.Instance,xmlNodes.GetRandomElement());
+        }
+
         public override void Destroy(CharacterObject obj)
         {
         }
@@ -125,6 +128,10 @@ namespace WarhammerOldWorld.ObjectManagment
                 return _instance;
             }
         }
+        public override void Deserialize(Hero obj)
+        {
+            obj.Deserialize(MBObjectManager.Instance, xmlNodes.GetRandomElement());
+        }
 
         public override void Destroy(Hero obj)
         {
@@ -135,63 +142,6 @@ namespace WarhammerOldWorld.ObjectManagment
         protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "heroes.xml");
 
     }
-
-    public class CultureObjectManger : ObjectManager<CultureObject>
-    {
-
-        private static CultureObjectManger _instance;
-        public static CultureObjectManger Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new CultureObjectManger();
-                return _instance;
-            }
-        }
-        public override void Destroy(CultureObject obj)
-        {
-        }
-
-        public override Type GetObjectType() => typeof(CultureObject);
-        protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "spcultures.xml");
-
-    }
-
-    public class KingdomObjectManager : ObjectManager<Kingdom>
-    {
-        private static KingdomObjectManager _instance;
-        public static KingdomObjectManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new KingdomObjectManager();
-                return _instance;
-            }
-        }
-        public override void Destroy(Kingdom obj)
-        {
-
-        }
-
-        public override Type GetObjectType() => typeof(Kingdom);
-        protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "spkingdoms.xml");
-
-    }
-
-    public class ClanObjectManager : ObjectManager<Clan>
-    {
-        public override void Destroy(Clan obj)
-        {
-
-        }
-
-        public override Type GetObjectType() => typeof(Clan);
-        protected override string PathToXML()=> Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "spclans.xml");
-    }
-
-
 
 
 }
