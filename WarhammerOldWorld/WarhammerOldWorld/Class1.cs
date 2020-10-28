@@ -53,9 +53,9 @@ namespace WarhammerOldWorld.ObjectManagment
         protected abstract string PathToXML();
         public abstract void Destroy(T obj);
 
-        public T Instantiate()
+        public T Instantiate(string entry)
         {
-            var result = MBObjectManager.Instance.CreateObjectFromXmlNode(xmlNodes.GetRandomElement());
+            var result = MBObjectManager.Instance.CreateObjectFromXmlNode(GetXmlByID(entry));
             try
             {
                 if (result is BasicCharacterObject)
