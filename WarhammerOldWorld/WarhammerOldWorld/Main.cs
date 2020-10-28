@@ -36,8 +36,6 @@ namespace WarhammerOldWorld
 
             if (Input.IsKeyDown(InputKey.G))
             {
-                CharacterObjectManager.Instance.Instantiate();
-                HeroObjectManager.Instance.Instantiate();
             }
         }
 
