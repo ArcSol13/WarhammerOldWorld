@@ -36,8 +36,8 @@ namespace WarhammerOldWorld
 
             if (Input.IsKeyPressed(InputKey.G))
             {
-                CharacterObjectManager.Instance.Instantiate();
-                HeroObjectManager.Instance.Instantiate();
+                CharacterObjectManager.Instance.Instantiate("lord_2_22");
+                HeroObjectManager.Instance.Instantiate("lord_2_22");
                 InformationManager.DisplayMessage(new InformationMessage("Character instantiated!"));
             }
         }
