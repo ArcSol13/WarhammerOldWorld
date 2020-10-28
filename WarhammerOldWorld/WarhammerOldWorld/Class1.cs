@@ -53,7 +53,7 @@ namespace WarhammerOldWorld.ObjectManagment
         protected abstract string PathToXML();
         public abstract void Destroy(T obj);
 
-        public T Instantiate(string entry)
+        public T Instantiate(String entry)
         {
             var result = MBObjectManager.Instance.CreateObjectFromXmlNode(GetXmlByID(entry));
             try
