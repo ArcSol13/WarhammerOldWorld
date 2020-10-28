@@ -34,10 +34,11 @@ namespace WarhammerOldWorld
             foreach (var module in activeModules)
                 module.OnUpdate();
 
-            if (Input.IsKeyDown(InputKey.G))
+            if (Input.IsKeyPressed(InputKey.G))
             {
                 CharacterObjectManager.Instance.Instantiate();
                 HeroObjectManager.Instance.Instantiate();
+                InformationManager.DisplayMessage(new InformationMessage("Character instantiated!"));
             }
         }
 

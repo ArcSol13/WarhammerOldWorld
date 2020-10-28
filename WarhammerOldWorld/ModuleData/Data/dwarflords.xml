@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NPCCharacters>
+  
+  <NPCCharacter id="lord_thorgrim" name="{=I72U5ttG}Thorgrim Grudgebearer" age="825" voice="ironic" battleTemplate="NPCCharacter.thorgrim_lord_lady_battle_equipment_heavy" civilianTemplate="NPCCharacter.thorgrim_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord" default_group="Infantry">
+    <face>
+      <!--face_key value="0006076014fc144bc88947ec647b59a426a49a73ac7babec437a5159757497bb000cb64d85e57976000000000000000000000000000000000000000000009183" /-->
+      <BodyProperties version="4" key="0000080000FC34CB847E0C80FE1F009B5F7A5D4BBA96DC48665524877F0F7D920127791302FE4FE900000000000000000000000000000000000000000C4040C0" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <!-- USED TO DERIVE SKILLS-->
+      <Trait id="BalancedFightingSkills" value="10" />
+      <Trait id="Commander" value="10" />
+      <Trait id="Politician" value="9" />
+      <Trait id="Manager" value="10" />
+      <!-- PERSONALITY/REPUTATION-->
+      <Trait id="Valor" value="10" />
+      <Trait id="Generosity" value="7" />
+      <Trait id="Mercy" value="3" />
+      <Trait id="Honor" value="10" />
+      <Trait id="Calculating" value="7" />
+      <Trait id="Egalitarian" value="8" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_01" name="{=I72U5ttG}Thorek Ironbrow" age="995" voice="ironic" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord" default_group="Infantry">
+    <face>
+      <!--face_key value="0006076014fc144bc88947ec647b59a426a49a73ac7babec437a5159757497bb000cb64d85e57976000000000000000000000000000000000000000000009183" /-->
+      <BodyProperties version="4" key="0000080011FC2880E47E7CE0FE1F289FAFAA5D4BBA96DC6EFFFCF0177F0F7DE80127791302EFEEFF00000000000000000000000000000000000000000C4050C0" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <!-- USED TO DERIVE SKILLS-->
+      <Trait id="BalancedFightingSkills" value="8" />
+      <Trait id="Commander" value="8" />
+      <Trait id="Politician" value="7" />
+      <Trait id="Manager" value="10" />
+      <!-- PERSONALITY/REPUTATION-->
+      <Trait id="Valor" value="3" />
+      <Trait id="Generosity" value="-3" />
+      <Trait id="Honor" value="7" />
+      <Trait id="Calculating" value="5" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_02" name="{=VzhbUL60}Skorgarra Ironbrow" default_group="Infantry" age="905" voice="curt" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="00064927c03c03804e486a9816653e5454789a77389b757a742b4376be86827c000a5b54ba7956c50000000000000ffe00000000000000000000000000009000" /-->
+      <BodyProperties version="4" age="30.72" weight="0" build="0" key="000448070044000B4E4EECF0E66FF1FFDBEF9A77389B757AFEFFFE7FB01FFEEF01077B1300EC5CFE0000000000000FFE00000000000000000000000000003003" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <!-- USED TO DERIVE SKILLS-->
+      <Trait id="Politician" value="2" />
+      <Trait id="Manager" value="4" />
+      <!-- PERSONALITY/REPUTATION-->
+      <Trait id="Honor" value="1" />
+      <Trait id="Generosity" value="-1" />
+    </Traits>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_03" name="Byrrnoth Grundadrakk" age="359" voice="ironic" default_group="Infantry" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="0011b52597bc038e94a8c26585aaa93992d5a78776779c82329b657437695d350005a5a40de9ba6200001105000030a30000001f000000000000000000000000" /-->
+      <BodyProperties version="4" key="0000440880003A40FFFF0FF0FFE02AFE6F007411000130E507987F058E0FF7770107701300474128000000000000000000000000000000000000000000001002" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="7" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="6" />
+      <Trait id="Manager" value="4" />
+      <Trait id="Honor" value="2" />
+      <Trait id="Valor" value="2" />
+      <Trait id="Generosity" value="-1" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_04" default_group="Infantry" age="401" voice="ironic" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord" name="{=WnhPFlON}Berfitrude Grundadrakk">
+    <face>
+      <!--face_key value="001f352180bc3001284e78a7c3952a6a6a95716b4a4d66578dc8c7ca329aba79000876942b68c8b90000000000000ffe00000000000000000000000000000000" /-->
+      <BodyProperties version="4" key="0003340140B43001284E08AFCE980A6F6A9B716B4A4D66578DC8C7CA329AE9FE010776130068C8B90000000000000FFE00000000000000000000000000000003" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <!--NONCOMBATANT FEMALE-->
+      <Trait id="Politician" value="8" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Honor" value="-1" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_05" name="{=acp2IcMs}Ulther Stonehammer" default_group="Infantry" age="60" voice="curt" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="002c912e12bc258279773b5a8d89d6998c89d91976ac398293c3b96396878a5400079794b788d5620000387a00000aeb00000033000000000000000000002000" /-->
+      <BodyProperties version="4" age="30.72" weight="0" build="0" key="000B980440FC3981EFEE0E85FE75206F9FE45C77F87CFEBE4FFFF018EF0FAD980107791300EEB0FC000000000000000000000000000000000000000000003002" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="6" />
+      <Trait id="Commander" value="10" />
+      <Trait id="Politician" value="2" />
+      <Trait id="Manager" value="4" />
+      <Trait id="Honor" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_06" name="{=auMsvXpb}Oakguard Stonehammer" default_group="Infantry" age="35" voice="ironic" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="00127250003c238b5b8759c9642669ecbdb7b4b78ccb245688ac882a863567d6000c68a9b5cda8c9000000000000000000000000000000000000000000007000" /-->
+      <BodyProperties version="4" key="0012700B574424495B8F0EF0640F169E9FEEB4B78CCB24C688AC8826601E80F60107781300CDA8C9000000000000000000000000000000000000000000004000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="5" />
+      <Trait id="Commander" value="3" />
+      <Trait id="Politician" value="3" />
+      <Trait id="Manager" value="1" />
+      <Trait id="Honor" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_07" default_group="Infantry" age="64" voice="softspoken" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord" name="{=dwFZFQ6V}Londrelin Stonehammer">
+    <face>
+      <!--face_key value="000ca12e00bc2005478d688968868296a6779bb376d6a724d866c7b9a9a97b7d000cc774ad629b660000000000000ffe00000000000000000000000000001080" /-->
+      <BodyProperties version="4" age="30.72" weight="0" build="0" key="0009A00E40B42005478EFEE06F0FE0DE1FFF9BB376D6A724D8FFE70FA00FFFEE0107771300F4FB6E0000000000000FFE00000000000000000000000000001083" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="4" />
+      <Trait id="Commander" value="7" />
+      <Trait id="Politician" value="4" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Honor" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_08" name="{=LiAefNmE}Gotri Hammerson" default_group="Infantry" age="58" voice="earnest" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="00009bfb00fc1484848b7125a85adb558b675c76b79663b8da84987576b6484d0005a9cfdebb5788000000000000000000000000000000000000000000008000" /-->
+      <BodyProperties version="4" key="0000980CCFFC1A03848E5125FECF016EC8FC5C76B79663B8FFFCFF1E7F1F8DFA0107791300EF9EFF0000000000000000000000000000000000000000000060C0" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="KnightFightingSkills" value="4" />
+      <Trait id="Commander" value="3" />
+      <Trait id="Politician" value="4" />
+      <Trait id="Manager" value="2" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_09" default_group="Infantry" age="45" voice="earnest" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord" name="{=DH7SnD7L}Kraz Grundadrakk">
+    <face>
+      <!--face_key value="00114527007c0346bcb59735a4d4b3697c6889abc79db7798a7873287a788e6800054cc4059ab26e00001105000030a30000001f000000000000000000001000" /-->
+      <BodyProperties version="4" key="0003100E407003CD97483A3B574B39888F6DBD6945B4BFE164458FC5283414B601077713007661CB0000037F0000000F000000370491400100000000000030C0" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="3" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="6" />
+      <Trait id="Manager" value="1" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Honor" value="-1" />
+      <Trait id="Valor" value="1" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_10" default_group="Infantry" age="40" voice="curt" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord" name="{=tTuaiLS6}Girgruk Stonehammer">
+    <face>
+      <!--face_key value="0022752000003385b478815ce898cb34ac8a23954c63417d77a7894b7d57b497000d869406b6674800001105000030a30000001f000000000000000000045000" /-->
+      <BodyProperties version="4" age="65.14" weight="0" build="0" key="00077402C0003480B47E115CE89E3BBF9E8A23954C63419D77A7894B700FB4E60107761300B6674800001105000030A30000001F000000000000000000003000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="HorseArcherFightingSkills" value="5" />
+      <Trait id="Commander" value="8" />
+      <Trait id="Politician" value="2" />
+      <Trait id="Manager" value="5" />
+      <Trait id="Valor" value="-1" />
+      <Trait id="Honor" value="1" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_11" voice="ironic" age="22" default_group="Cavalry" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.noncombatant_template_empire_noblewoman" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord" name="{=AdK4Ilzw}Olga Gausser">
+    <face>
+      <!--face_key value="0006652b4000000287b86998a4136688bc87b56726542344956c8b7576556786000000006697a6680000000000000ffe00000000000000000000000000000000" /-->
+      <BodyProperties version="4" key="0005640B4000000287B86998A4156688BC87B56726542344956C8B7576556786000350040397A6680000000000000FFE00000000000000000000000000F00000" />
+    </face>
+    <skills>
+      <!--NONCOMBATANT FEMALE-->
+    </skills>
+    <Traits>
+      <!--NONCOMBATANT FEMALE-->
+      <Trait id="Politician" value="5" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Honor" value="-1" />
+      <Trait id="Calculating" value="1" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_12" default_group="Infantry" age="24" voice="earnest" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord" name="{=uLjRHv9p}Gungorlya Ironbrow">
+    <face>
+      <!--face_key value="0005f92980000005a8979a79968745886bc878557396513466647967965548a70000000097889b670000000000000ffe00000000000000000000000000000000" /-->
+      <BodyProperties version="4" key="00038C0A00000005A8979AF996FE508FEFFA78557396513466647967900FEEAE0107701300889B670000000000000FFE00000000000000000000000000000003" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="HorseArcherFightingSkills" value="6" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="3" />
+      <Trait id="Manager" value="4" />
+      <Trait id="Valor" value="1" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_13" name="{=QvfUqzpF}Volstone Grundadrakk" voice="earnest" age="18" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.noncombatant_template_empire_noblewoman_elegant" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord" default_group="Infantry">
+    <face>
+      <!--face_key value="000ca52940fc20029b6287cd6a6878b7cbd95493d32c926a96657265ec1ca7b80004b78455577b430000000000000ffe00000000000000000000000000002000" /-->
+      <BodyProperties version="4" key="000BA40880FC20029B6F87ED6AEEF00FCBD85493D32C926A9FF8FF6FEC1CFEBF0107771300FC8BFF0000000000000FFE00000000000000000000000000002000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <!--NONCOMBATANT FEMALE-->
+      <Trait id="Politician" value="7" />
+      <Trait id="Manager" value="5" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Honor" value="-1" />
+      <Trait id="Calculating" value="1" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_14" default_group="Infantry" age="22" voice="ironic" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord" name="{=FUT6eXfw}Ezmerus Stonehammer">
+    <face>
+      <!--face_key value="0012492300fc3003289acc571c647b6c5c67ca99857a5926745535778ed9ab58000c874485bba4990000000000000ffe00000000000000000000000000005000" /-->
+      <BodyProperties version="4" key="0009A00580B40005475A97A9858A69CB1FFF9BB376D6A724D8FFE70FA00FFFEE0107771300F4FB6E0000000000000FFE00000000000000000000000000001083" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <!-- COMBATANT -->
+      <Trait id="HorseArcherFightingSkills" value="5" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="4" />
+      <Trait id="Manager" value="5" />
+      <Trait id="Honor" value="1" />
+    </Traits>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_14" default_group="Infantry" age="22" voice="ironic" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord" name="{=FUT6eXfw}Ezmerus Stonehammer">
+    <face>
+      <!--face_key value="0012492300fc3003289acc571c647b6c5c67ca99857a5926745535778ed9ab58000c874485bba4990000000000000ffe00000000000000000000000000005000" /-->
+      <BodyProperties version="4" key="0009A00580B40005475A97A9858A69CB1FFF9BB376D6A724D8FFE70FA00FFFEE0107771300F4FB6E0000000000000FFE00000000000000000000000000001083" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <!-- COMBATANT -->
+      <Trait id="HorseArcherFightingSkills" value="5" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="4" />
+      <Trait id="Manager" value="5" />
+      <Trait id="Honor" value="1" />
+    </Traits>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_15" name="{=HSlPLC4m}Kara Bokha" default_group="Cavalry" age="23" voice="ironic" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" is_female="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="001cf40e40fc10076c63396b58a66c7159da89aadd789458b79bde7778360676000f0760088be39b000000000000000000000000000000000000000000001180" /-->
+      <BodyProperties version="4" key="00001C0E40FC10076C63396B58A46C7159DA89AADD789458B79BDE777836067601777713078BE39B000000000000000000000000000000000000000000E010C3" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="CavalryFightingSkills" value="6" />
+      <Trait id="Commander" value="5" />
+      <Trait id="Politician" value="6" />
+      <Trait id="Manager" value="2" />
+      <Trait id="Calculating" value="-1" />
+      <Trait id="Generosity" value="-1" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Valor" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_16" name="{=u1lTJoPO}Grimm Burloksson" voice="curt" default_group="Infantry" age="640" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="0022752000003385b478815ce898cb34ac8a23954c63417d77a7894b7d57b497000d869406b6674800001105000030a30000001f000000000000000000045000" /-->
+      <BodyProperties version="4" key="0000740000003A05B47E715CE89F0B8FAC8023954C6341FD77A7894B7D57B4970107761300B6674800001105000030A30000001F000000000000000000002000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="7" />
+      <Trait id="Commander" value="7" />
+      <Trait id="Politician" value="4" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Honor" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_17" name="Thristlestone the Dishonoured" age="295" voice="curt" is_female="true" default_group="Infantry" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="00127250003c238b5b8759c9642669ecbdb7b4b78ccb245688ac882a863567d6000c68a9b5cda8c9000000000000000000000000000000000000000000007000" /-->
+      <BodyProperties version="4" key="00127000004429805B8759C9642639ECBDB7B4B78CCB249688AC882A863567D60127781302CDA8C9000000000000000000000000000000000000000000503100" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="7" />
+      <Trait id="Commander" value="8" />
+      <Trait id="Politician" value="5" />
+      <Trait id="Manager" value="8" />
+      <Trait id="Mercy" value="0" />
+      <Trait id="Calculating" value="2" />
+      <Trait id="Honor" value="3" />
+      <Trait id="Generosity" value="1" />
+      <Trait id="Egalitarian" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_18" name="{=7nVZgjmn}Anvella Ironforge" age="38" voice="curt" is_female="True" default_group="Cavalry" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="000583c000fc000f66a89964658d25876585d896796876769a8899a987a7ab750003d65e03c578eb000000000000000000000000000000000000000000946140" /-->
+      <BodyProperties version="4" weight="0.5" build="0.5"  key="0016500CD1A00010945948899A9B8C7844DAC78467D87565AB5466784889A58501A776130A83B7BA00000000000000000000000000000000000000004B5C1003"  />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="Politician" value="1" />
+      <Trait id="Manager" value="3" />
+      <Trait id="Honor" value="1" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_19" name="{=7nVZgjmn}Thornsthril Ironforge" age="18" voice="curt" is_female="True" default_group="Cavalry" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="000583c000fc000f66a89964658d25876585d896796876769a8899a987a7ab750003d65e03c578eb000000000000000000000000000000000000000000946140" /-->
+      <BodyProperties version="4" age="25.84" weight="0.5" build="0.5"  key="000B500E518830018883625946BD4C74CD2A878665347B498B83461C3686D569012776130286C8B500000000000000000000000000000000000000004A442003"  />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="Politician" value="1" />
+      <Trait id="Manager" value="2" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_20" name="{=7nVZgjmn}Banmilyn Ironforge" age="19" voice="curt" is_female="True" default_group="Cavalry" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="000583c000fc000f66a89964658d25876585d896796876769a8899a987a7ab750003d65e03c578eb000000000000000000000000000000000000000000946140" /-->
+      <BodyProperties version="4" weight="0.5" build="0.5"  key="000B100E51E4200F267E993B89CF077F8FEE4556433D5492B5979E7FA089FAFF01077613004347D4000000000000000000000000000000000000000058043083"  />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="1" />
+      <Trait id="Politician" value="1" />
+      <Trait id="Manager" value="3" />
+      <Trait id="Honor" value="1" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_21" name="Alrik Ranulfsson" age="590" voice="ironic" default_group="Infantry" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="00127250003c238b5b8759c9642669ecbdb7b4b78ccb245688ac882a863567d6000c68a9b5cda8c9000000000000000000000000000000000000000000007000" /-->
+      <BodyProperties version="4" age="25.84" weight="0.5" build="0.5" key="00137002D8442A40BB8F59CFA42F19EFBEB7B4B78CCB24EF88AC8F2A863E67D60107781300CDA8C9000000000000000000000000000000000000000004005000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="8" />
+      <Trait id="Commander" value="7" />
+      <Trait id="Politician" value="7" />
+      <Trait id="Manager" value="7" />
+      <Trait id="Valor" value="2" />
+      <Trait id="Generosity" value="3" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_22" name="{=6TphQddp}Thufraetryd Ranulfsson" age="600" is_female="true" voice="ironic" default_group="Cavalry" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="000ba52cc03c300d658918a66a565a686aaab3a57a485991a57a63282749b75400056aa402ae984800001105000030a30000001f000000000000000000001000" /-->
+      <BodyProperties version="4" age="25.84" weight="0.5" build="0.5"  key="00036C0A00CC30073B51C459648F997F393B877A45A83B7956B9AD56897A9DD20107761300C7976A0000000000000000000000000000000000000000300410C3"  />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="Manager" value="1" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_23" name="{=3C8F07SL}Kazran Grimbrow" voice="ironic" is_female="false" default_group="Infantry" age="333" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="0011b52597bc038e94a8c26585aaa93992d5a78776779c82329b657437695d350005a5a40de9ba6200001105000030a30000001f000000000000000000000000" /-->
+      <BodyProperties version="4" age="25.84" weight="0.5" build="0.5" key="0007B40CD7B4248EF4AE92F0FF0E164946FBA78776779C8E329B60773009FDF60107751300E9BA6200001105000030A30000001F000000000000000000004000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="7" />
+      <Trait id="Commander" value="8" />
+      <Trait id="Politician" value="7" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Generosity" value="1" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Egalitarian" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_24" name="Rorek Granitehand" age="215" voice="curt" default_group="Infantry" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="0022752000003385b478815ce898cb34ac8a23954c63417d77a7894b7d57b497000d869406b6674800001105000030a30000001f000000000000000000045000" /-->
+      <BodyProperties version="4" age="25.84" weight="0.5" build="0.5" key="000B740000003985B47F51ECE89E1B3FA6E923954C63418D77A78F4B7D57B49B0107761300B6674800001105000030A30000001F000000000000000000045000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="6" />
+      <Trait id="Commander" value="7" />
+      <Trait id="Politician" value="8" />
+      <Trait id="Manager" value="5" />
+      <Trait id="Valor" value="1" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_25" name="{=HQaqg40g}Hamfast Gromilseeker" voice="curt" age="38" default_group="Infantry" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.dwarf" occupation="Lord">
+    <face>
+      <!--face_key value="00007ffe003c138576796ac3a824c2c927c7472473b82b4782995a7c9615a74a0008498f81278844000000000000000000000000000000000000000000008000" /-->
+      <BodyProperties version="4" key="00007C0E40442400767F6AE3A82F326F77F7472473B82B4782995A78BF1EBCB30107791300278844000000000000000000000000000000000000000000004000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="5" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="7" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Honor" value="-1" />
+      <Trait id="Generosity" value="1" />
+      <Trait id="Calculating" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_26" name="{=HQaqg40g}Defthurst Gromilseeker" voice="softspoken" is_female="true"  age="31" default_group="Cavalry" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="0011b45b402410088733440e80468f1fff4f9274c862b448941b5637963e5d3e000a68810b7247a6000000000000000000000000000000000000000000003101" /-->
+      <BodyProperties version="4" weight="0.5" build="0.5"  key="0022CC0580CC100B5867B786DC6B9968B4367A58547AB48D79EAB69452B75745016776130655B895000000000000000000000000000000000000000030C40083"  />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="Manager" value="1" />
+      <Trait id="Mercy" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_27" name="{=EJFY3KdF}Grimly Hammerfist" voice="curt" is_female="false" default_group="Infantry" age="181" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="001f852c87fc03896daca8926b38885a859c14a35794a7b4d6698187a2756c3c000d8534c99977690000037f0000000f00000037049140010000000000008000" /-->
+      <BodyProperties version="4" key="0003840CC0FC19096DAF58EE6B35484F8A9C14A35794A7D4D6698187A2756C3701077513009977690000037F0000000F00000037049140010000000030044083" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="7" />
+      <Trait id="Commander" value="7" />
+      <Trait id="Politician" value="3" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Valor" value="1" />
+      <Trait id="Generosity" value="1" />
+      <Trait id="Egalitarian" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_28" name="{=EJFY3KdF}Toresgreahilde Hammerfist" voice="curt" is_female="true" default_group="Cavalry" age="164" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment_heavy" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="0016d52e407c334e269c3c75a7974761a6ae8c7b19959cab9cb685d9565bb66a00047bb4067385ab00001105000030a30000001f000000000000000000009000" /-->
+      <BodyProperties version="4" weight="0.5" build="0.5"  key="0003D80B5114300AC88328F8A6FF275E3ABECAA26D6668654FF4FE9E75DFE2FF0107761300A39FFF000000000000000000000000000000000000000042040003"  />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="1" />
+      <Trait id="Commander" value="1" />
+      <Trait id="Politician" value="2" />
+      <Trait id="Manager" value="3" />
+      <Trait id="Mercy" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_29" name="{=EJFY3KdF}Iulia Hammerfist" voice="curt" is_female="true" default_group="Cavalry" age="2" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment_heavy" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="0016d52e407c334e269c3c75a7974761a6ae8c7b19959cab9cb685d9565bb66a00047bb4067385ab00001105000030a30000001f000000000000000000009000" /-->
+      <BodyProperties version="4" weight="0.5" build="0.5"  key="00003C02D0CC200FCECB7755385C79B87764EA7A87439E635759266A4A5A653B01177613012CB56100000000000000000000000000000000000000004A344043"  />
+    </face>
+    <skills></skills>
+    <Traits>
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_30" name="{=fb0F6jKI}Bambrew Ranulfsson" voice="earnest" is_female="false" default_group="Infantry" age="58" battleTemplate="NPCCharacter.dwarf_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.dwarf_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="000cb12e400003884897d665a3c5435c87d42767b77897c8637a678695873a87000954b4077b64b500001105000030a30000001f000000000000000000001000" /-->
+      <BodyProperties version="4" key="0007B00E40000A40FC9946A5A9CD330F74FA2768F7B88FFF637A678A901FDAE601077413007B64B500001105000030A30000001F000000000000000000044000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="7" />
+      <Trait id="Commander" value="7" />
+      <Trait id="Politician" value="8" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Valor" value="1" />
+      <Trait id="Calculating" value="1" />
+      <Trait id="Mercy" value="-1" />
+      <Trait id="Honor" value="-1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_lord_31" name="{=6TphQddp}Fotmiren Ranulfsson" age="55" voice="softspoken" is_female="True" default_group="Cavalry" battleTemplate="NPCCharacter.empire_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.empire_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="000ba52cc03c300d658918a66a565a686aaab3a57a485991a57a63282749b75400056aa402ae984800001105000030a30000001f000000000000000000001000" /-->
+      <BodyProperties version="4" age="25.84" weight="0.5" build="0.5"  key="0003AC02D100300FA554C37EA53FA67F8BEE7AA94D9BAE66BBE6EB5F5383FCFF01077613007C4FFF00000000000000000000000000000000000000004C043043"  />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="1" />
+      <Trait id="Commander" value="1" />
+      <Trait id="Politician" value="2" />
+      <Trait id="Manager" value="3" />
+      <Trait id="Generosity" value="1" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="dwarf_slayer_lord_01" name="{=kfNW01y5}Dothra the Broken" voice="curt" is_female="false" default_group="Infantry" age="441" battleTemplate="NPCCharacter.slayer_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.slayer_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="001971249300340a9772c4c436aa7887a435497444328e72db8c48519d57749a0007a13480ba29780000387a00000aeb00000033000000000000000000005000" /-->
+      <BodyProperties version="4" key="00007007130034CAF68F2DFFFFFE1B8FA6F749744432FEAFDEF6F15EE70FF7F70127711302EE2F9E0000387A00000AEB00000033000000000000000000503100" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="9" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="5" />
+      <Trait id="Manager" value="4" />
+      <Trait id="Mercy" value="-5" />
+      <Trait id="Generosity" value="0" />
+      <Trait id="Calculating" value="3" />
+      <Trait id="Honor" value="5" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id="lord_ungrim" name="{=kfNW01y5}Ungrim Ironfist" voice="curt" is_female="false" default_group="Infantry" age="58" battleTemplate="NPCCharacter.slayer_lord_lady_battle_equipment" civilianTemplate="NPCCharacter.slayer_unarmored_noble_equipment" is_hero="true" culture="Culture.empire" occupation="Lord">
+    <face>
+      <!--face_key value="001971249300340a9772c4c436aa7887a435497444328e72db8c48519d57749a0007a13480ba29780000387a00000aeb00000033000000000000000000005000" /-->
+      <BodyProperties version="4" key="00007007130034C06C8C5DFFFFF7018AAAF749744432FE64DEF6F05EE70FFE650127711302EE2F9E0000387A00000AEB00000033000000000000000000504100" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="12" />
+      <Trait id="Commander" value="8" />
+      <Trait id="Politician" value="7" />
+      <Trait id="Manager" value="4" />
+      <Trait id="Mercy" value="-5" />
+      <Trait id="Honor" value="5" />
+      <Trait id="Valor" value="10" />
+    </Traits>
+    <equipmentSet></equipmentSet>
+  </NPCCharacter>
+</NPCCharacters>
