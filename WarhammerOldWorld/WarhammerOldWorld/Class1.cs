@@ -19,7 +19,19 @@ namespace WarhammerOldWorld.ObjectManagment
         {
             LoadXmls();
         }
+        public T Instantiate()
+        {
 
+            var result = MBObjectManager.Instance.CreateObjectFromXmlNode(xmlNodes.GetRandomElement());
+            try
+            {
+                return result as T;
+            }
+            catch
+            {
+                throw new Exception("Trying to instantiate " + result.ToString() + " with type " + typeof(T) + ", wrong type!");
+            }
+        }
         public XmlNode GetXmlByID(string id)
         {
             XmlNode resultNode = xmlNodes.Where((x) => x.Attributes[0].Value == id).FirstOrDefault();
@@ -53,13 +65,11 @@ namespace WarhammerOldWorld.ObjectManagment
         protected abstract string PathToXML();
         public abstract void Destroy(T obj);
 
-        public T Instantiate()
+        public T Instantiate(string entry)
         {
-            var result = MBObjectManager.Instance.CreateObjectFromXmlNode(xmlNodes.GetRandomElement());
+            var result = MBObjectManager.Instance.CreateObjectFromXmlNode(GetXmlByID(entry));
             try
             {
-                if (result is BasicCharacterObject)
-                    (result as BasicCharacterObject).Name = new TaleWorlds.Localization.TextObject("Spawned Character!");
                 return result as T;
             }
             catch
@@ -88,7 +98,7 @@ namespace WarhammerOldWorld.ObjectManagment
         }
         public override Type GetObjectType() => typeof(BasicCharacterObject);
 
-        protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "lords.xml");
+        protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "bandits.xml");
         
     }
 
