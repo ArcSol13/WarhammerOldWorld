@@ -46,7 +46,7 @@ namespace WarhammerOldWorld
                 SetDialogs();
 
                 AddTrackedObject(questGiver);
-            }
+            }   
             public override TextObject Title => new TextObject("Kill Units");
 
             public override bool IsRemainingTimeHidden => false;
@@ -122,9 +122,9 @@ namespace WarhammerOldWorld
     
     public abstract class QuestAction
     {
-        public IObservable<bool> OnComplete() => onComplete.AsObservable();
-        public IObservable<bool> OnFail() => onFail.AsObservable();
-        public IObservable<TextObject> logUpdated => logSubject.AsObservable();
+        public IObservable<bool> OnComplete() => onComplete;
+        public IObservable<bool> OnFail() => onFail;
+        public IObservable<TextObject> logUpdated => logSubject;
         protected QuestAction()
         {
         }
@@ -141,7 +141,7 @@ namespace WarhammerOldWorld
         #endregion
         ~QuestAction()
         {
-            logSubject?.Dispose();
+            //logSubject?.Dispose();
             onComplete?.Dispose();
             onFail?.Dispose();
         }
@@ -170,7 +170,6 @@ namespace WarhammerOldWorld
         Dictionary<QuestAction, QuestAction> hasActionOnComplete;
         [SaveableField(3)]
         Dictionary<QuestAction, QuestAction> hasActionOnFail;
-        [SaveableField(4)]
         ILoggable updateLogs;
         //Adds a task on completion of another task
         public void AddQuestActionOnComplete(QuestAction onAction, QuestAction addingAction)
@@ -223,7 +222,7 @@ namespace WarhammerOldWorld
                     if (!currentLog.HasBeenCompleted())
                         currentLog.UpdateCurrentProgress(score > currentLog.Range ? currentLog.Range : score);
                 });
-                action.logUpdated.Subscribe((log) =>
+                 action.logUpdated.Subscribe((log) =>
                 {
                     updateLogs.AddLogWrapper(log);
                 });
