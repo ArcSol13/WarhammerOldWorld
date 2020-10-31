@@ -1,31 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Heroes>
-  <!--lords.xml-->
-  <Hero id="dwarf_lord_01" is_noble="true" spouse="Hero.lord_1_8" faction="Faction.clan_empire_west_1" text="Thorek Ironbrow is a Runelord like unto those of legend. In the best of his moods, he is fiercely irate and a living terror to his apprentices in the weapons shops of Karak Azul, where he has ruled for centuries on end. " />
+  <Hero id="dwarf_lord_01" is_noble="true" spouse="Hero.dwarf_lord_02" faction="Faction.clan_empire_west_1" text="Thorek Ironbrow is a Runelord like unto those of legend. In the best of his moods, he is fiercely irate and a living terror to his apprentices in the weapons shops of Karak Azul, where he has ruled for centuries on end. " />
   <Hero id="lord_thorgrim" is_noble="true" faction="Faction.clan_empire_west_1" text="Thorgrim Grudgebearer was named High King of the Dwarfs and ruler of Karaz-a-Karak in 2420. He seeks to return Karaz Ankor to its former glory." />
-  <Hero id="dwarf_lord_08" is_noble="true" father="Hero.lord_1_7" faction="Faction.clan_empire_west_1" />
-  <Hero id="dwarf_lord_02" is_noble="true" faction="Faction.clan_empire_west_1" spouse="Hero.lord_1_7" />
-  <Hero id="dwarf_lord_03" is_noble="true" spouse="Hero.lord_1_10" faction="Faction.clan_empire_west_2" text="Byrrnoth was born into the ruling clan some three centuries ago, the younger of two brothers. The Dwarfs of Barak Varr were less dour, more outgoing and friendlier to other races than Dawi from most other holds and Byrrnoth was no exception." />
-  <Hero id="dwarf_lord_04" is_noble="true" faction="Faction.clan_empire_west_2" spouse="Hero.lord_1_9" />
-  <Hero id="dwarf_lord_05" is_noble="true" spouse="Hero.lord_1_12" faction="Faction.clan_empire_west_3" />
-  <Hero id="dwarf_lord_06" is_noble="true" father="Hero.lord_1_11" mother="Hero.lord_1_12" faction="Faction.clan_empire_west_3" />
-  <Hero id="dwarf_lord_07" is_noble="true" spouse="Hero.lord_1_11" faction="Faction.clan_empire_west_3" />
+  <Hero id="lord_1_75" is_noble="true" father="Hero.dwarf_lord_01" faction="Faction.clan_empire_west_1" />
+  <Hero id="dwarf_lord_02" is_noble="true" faction="Faction.clan_empire_west_1" spouse="Hero.dwarf_lord_01" />
+  <Hero id="dwarf_lord_03" is_noble="true" spouse="Hero.dwarf_lord_04" faction="Faction.clan_empire_west_2" text="Byrrnoth was born into the ruling clan some three centuries ago, the younger of two brothers. The Dwarfs of Barak Varr were less dour, more outgoing and friendlier to other races than Dawi from most other holds and Byrrnoth was no exception." />
+  <Hero id="dwarf_lord_04" is_noble="true" faction="Faction.clan_empire_west_2" spouse="Hero.dwarf_lord_03" />
+  <Hero id="dwarf_lord_04" is_noble="true" spouse="Hero.dwarf_lord_05" faction="Faction.clan_empire_west_3" />
+  <Hero id="lord_1_111" is_noble="true" father="Hero.dwarf_lord_04" mother="Hero.dwarf_lord_05" faction="Faction.clan_empire_west_3" />
+  <Hero id="dwarf_lord_05" is_noble="true" spouse="Hero.dwarf_lord_04" faction="Faction.clan_empire_west_3" />
 
-  <Hero id="lord_1_45" is_noble="true" faction="Faction.clan_empire_west_5" />
-  <Hero id="lord_1_45_1" is_noble="true" spouse="Hero.lord_1_45" faction="Faction.clan_empire_west_5" />
-  <Hero id="lord_1_45_2" is_noble="true" father="Hero.lord_1_45" mother="Hero.lord_1_45_1" faction="Faction.clan_empire_west_5" />
-  <Hero id="lord_1_45_3" is_noble="true" father="Hero.lord_1_45" mother="Hero.lord_1_45_1" faction="Faction.clan_empire_west_5" />
-  <Hero id="lord_1_52" is_noble="true" faction="Faction.clan_empire_west_6" />
-  <Hero id="lord_1_52_1" is_noble="true" spouse="Hero.lord_1_52" faction="Faction.clan_empire_west_6" />
-  <Hero id="lord_1_52_2" is_noble="true" father="Hero.lord_1_52" mother="Hero.lord_1_52_1" faction="Faction.clan_empire_west_6" />
-  <Hero id="lord_1_53" is_noble="true" faction="Faction.clan_empire_west_7" />
-  <Hero id="lord_1_71" is_noble="true" faction="Faction.clan_empire_west_8" />
-  <Hero id="lord_1_73" is_noble="true" faction="Faction.clan_empire_west_7" />
-  <Hero id="lord_1_73_1" is_noble="true" spouse="Hero.lord_1_73" faction="Faction.clan_empire_west_7" />
-  <Hero id="lord_1_57" is_noble="true" faction="Faction.clan_empire_west_5" />
-  <Hero id="lord_1_57_1" is_noble="true" spouse="Hero.lord_1_57" faction="Faction.clan_empire_west_5" />
-  <Hero id="lord_1_57_2" is_noble="true" father="Hero.lord_1_57" mother="Hero.lord_1_57_1" faction="Faction.clan_empire_west_5" />
-  <Hero id="lord_1_62" is_noble="true" faction="Faction.clan_empire_west_6" />
-  <Hero id="lord_1_62_1" is_noble="true" spouse="Hero.lord_1_62" faction="Faction.clan_empire_west_6" />
-  -->
+  <Hero id="dwarf_lord_06" is_noble="true" faction="Faction.clan_empire_west_1" />
+  <Hero id="dwarf_lord_07" is_noble="true" father="Hero.dwarf_lord_03" mother="Hero.dwarf_lord_04" faction="Faction.clan_empire_west_2" />
+  <Hero id="dwarf_lord_08" is_noble="true" father="Hero.dwarf_lord_04" mother="Hero.dwarf_lord_05" faction="Faction.clan_empire_west_3" />
+
+  <Hero id="dwarf_lord_09" is_noble="true" father="Hero.dwarf_lord_01" mother="Hero.dwarf_lord_02" faction="Faction.clan_empire_west_1" />
+  <Hero id="dwarf_lord_10" is_noble="true" father="Hero.dwarf_lord_03" mother="Hero.dwarf_lord_04" faction="Faction.clan_empire_west_2" />
+  <Hero id="dwarf_lord_11" is_noble="true" father="Hero.dwarf_lord_04" mother="Hero.dwarf_lord_05" faction="Faction.clan_empire_west_3" />
+
+  <Hero id="dwarf_lord_12" is_noble="true" faction="Faction.clan_empire_west_4" />
+  <Hero id="dwarf_lord_13" is_noble="true" faction="Faction.clan_empire_west_1" />
+
+  <Hero id="lord_1_46" is_noble="true" faction="Faction.clan_empire_west_4" />
+  <Hero id="lord_1_46_1" is_noble="true" spouse="Hero.lord_1_46" faction="Faction.clan_empire_west_4" />
+  <Hero id="lord_1_46_2" is_noble="true" father="Hero.lord_1_46" mother="Hero.lord_1_46_1" faction="Faction.clan_empire_west_4" />
+
+  <Hero id="dwarf_lord_14" is_noble="true" faction="Faction.clan_empire_west_5" />
+  <Hero id="dwarf_lord_15" is_noble="true" spouse="Hero.dwarf_lord_14" faction="Faction.clan_empire_west_5" />
+  <Hero id="dwarf_lord_17" is_noble="true" father="Hero.dwarf_lord_14" mother="Hero.dwarf_lord_15" faction="Faction.clan_empire_west_5" />
+  <Hero id="dwarf_lord_16" is_noble="true" father="Hero.dwarf_lord_14" mother="Hero.dwarf_lord_15" faction="Faction.clan_empire_west_5" />
+  <Hero id="dwarf_lord_18" is_noble="true" faction="Faction.clan_empire_west_6" />
+  <Hero id="dwarf_lord_19" is_noble="true" spouse="Hero.dwarf_lord_18" faction="Faction.clan_empire_west_6" />
+  <Hero id="dwarf_lord_20" is_noble="true" father="Hero.dwarf_lord_18" mother="Hero.dwarf_lord_19" faction="Faction.clan_empire_west_6" />
+  <Hero id="dwarf_lord_21" is_noble="true" faction="Faction.clan_empire_west_7" />
+  <Hero id="dwarf_lord_22" is_noble="true" faction="Faction.clan_empire_west_8" />
+  <Hero id="dwarf_lord_23" is_noble="true" faction="Faction.clan_empire_west_7" />
+  <Hero id="dwarf_lord_24" is_noble="true" spouse="Hero.dwarf_lord_23" faction="Faction.clan_empire_west_7" />
+  <Hero id="dwarf_lord_25" is_noble="true" faction="Faction.clan_empire_west_5" />
+  <Hero id="dwarf_lord_26" is_noble="true" spouse="Hero.dwarf_lord_25" faction="Faction.clan_empire_west_5" />
+  <Hero id="dwarf_lord_27" is_noble="true" father="Hero.dwarf_lord_25" mother="Hero.dwarf_lord_26" faction="Faction.clan_empire_west_5" />
+  <Hero id="dwarf_lord_28" is_noble="true" faction="Faction.clan_empire_west_6" />
+  <Hero id="dwarf_lord_29" is_noble="true" spouse="Hero.dwarf_lord_28" faction="Faction.clan_empire_west_6" />
+
+  <Hero id="lord_ungrim" is_noble="true" faction="Faction.clan_empire_west_4" text="Ungrim Ironfist is the last of the Slayer Kings of Karak Kadrin. As the King of Karak Kadrin, he is oathbound to protect his kingdom and his people. As the all-father of the Drakebeard Clan, he had to ensure that his blood relations succeeded, and as a sworn Slayer who had taken the oath, Ungrim is also bound to seek his doom against the most powerful foe he can find. " />
 </Heroes>
