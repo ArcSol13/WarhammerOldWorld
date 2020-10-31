@@ -45,15 +45,24 @@ namespace WarhammerOldWorld
             {
             }
         }
-        public override void OnGameLoaded(Game game, object initializerObject)
+        protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
         {
-            base.OnGameLoaded(game, initializerObject);
+            base.OnGameStart(game, gameStarterObject);
+
+            CampaignGameStarter campaignGameStarter = (CampaignGameStarter)gameStarterObject;
+            campaignGameStarter.AddBehavior(new MyCampainBehavior());
+
+            var quests = Campaign.Current.QuestManager.Quests;
+            var ISTHERE = Campaign.Current.QuestManager.IsThereActiveQuestWithType(typeof(MyCampainBehavior.TestQuest));
+               
+
             var questGiver = MBObjectManager.Instance.GetObject<Hero>((x) => { return x != Hero.MainHero && x.IsAlive; });
             var target = MBObjectManager.Instance.GetObject<BasicCharacterObject>(BasicCharacterObjectManager.Instance.GetXmlByID("looter").Attributes[0].Value);
-           
+
             //starting quest here becouse i didnt figure out how to assign quests to npcs
-            Observable.Timer(TimeSpan.FromSeconds(10)).Subscribe((X) => new TestQuest(questGiver,target,20).StartQuest());
+             Observable.Timer(TimeSpan.FromSeconds(20)).Subscribe((X) => new MyCampainBehavior.TestQuest(questGiver, target, 20).StartQuest());
         }
+
         protected override void OnSubModuleLoad()
         {
             Instance = this;
