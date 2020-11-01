@@ -34,6 +34,8 @@ namespace WarhammerOldWorld
 
         internal class TestQuest : QuestBase, ILoggable
         {
+            public override bool IsSpecialQuest => true;
+
             [SaveableField(1)]
             QuestActionStructure structure;
             public TestQuest(Hero questGiver, BasicCharacterObject target, int targetCount) : base("test_quest_1", questGiver, CampaignTime.DaysFromNow(10), 99999999)
@@ -44,7 +46,6 @@ namespace WarhammerOldWorld
                 structure.Completed().Where((x) => x).Subscribe((x) => CompleteQuestWithSuccess());
                 structure.Failed().Where((x) => x).Subscribe((x) => CompleteQuestWithFail());
                 SetDialogs();
-
                 AddTrackedObject(questGiver);
             }   
             public override TextObject Title => new TextObject("Kill Units");
@@ -112,17 +113,18 @@ namespace WarhammerOldWorld
             AddClassDefinition(typeof(KillQuestAction), 8);
             AddInterfaceDefinition(typeof(ILoggable), 16);
         }
-
         protected override void DefineContainerDefinitions()
         {
             ConstructContainerDefinition(typeof(Dictionary<QuestAction, QuestAction>));
         }
     }
+    
 
     
     public abstract class QuestAction
     {
         public IObservable<bool> OnComplete() => onComplete;
+
         public IObservable<bool> OnFail() => onFail;
         public IObservable<TextObject> logUpdated => logSubject;
         protected QuestAction()
@@ -130,7 +132,6 @@ namespace WarhammerOldWorld
         }
         protected BehaviorSubject<bool> onComplete = new BehaviorSubject<bool>(false);
         protected BehaviorSubject<bool> onFail = new BehaviorSubject<bool>(false);
-
         protected Subject<TextObject> logSubject = new Subject<TextObject>();
         public abstract IObservable<int> UpdateScore();
         #region logging
@@ -141,7 +142,7 @@ namespace WarhammerOldWorld
         #endregion
         ~QuestAction()
         {
-            //logSubject?.Dispose();
+            logSubject?.Dispose();
             onComplete?.Dispose();
             onFail?.Dispose();
         }
@@ -156,10 +157,7 @@ namespace WarhammerOldWorld
     {
         public QuestActionStructure(QuestAction current, ILoggable updateLogs)
         {
-            hasActionOnComplete = new Dictionary<QuestAction, QuestAction>();
-            hasActionOnFail = new Dictionary<QuestAction, QuestAction>();
             currentAction = current;
-            _actionChanged = new BehaviorSubject<QuestAction>(current);
             this.updateLogs = updateLogs;
             Init();
         }
@@ -170,6 +168,7 @@ namespace WarhammerOldWorld
         Dictionary<QuestAction, QuestAction> hasActionOnComplete;
         [SaveableField(3)]
         Dictionary<QuestAction, QuestAction> hasActionOnFail;
+        [SaveableField(4)]
         ILoggable updateLogs;
         //Adds a task on completion of another task
         public void AddQuestActionOnComplete(QuestAction onAction, QuestAction addingAction)
@@ -197,7 +196,6 @@ namespace WarhammerOldWorld
                 }
             });
         }
-
         BehaviorSubject<QuestAction> _actionChanged;
         public IObservable<QuestAction> ActionChanged() => _actionChanged;
 
@@ -207,16 +205,25 @@ namespace WarhammerOldWorld
         public IObservable<bool> Completed() => completeSubject.AsObservable();
         //Returns true when you failed the quest
         public IObservable<bool> Failed() => failSubject.AsObservable();
-
+        [SaveableField(5)]
+        JournalLog currentLog;
         public void Init()
         {
+            hasActionOnComplete = new Dictionary<QuestAction, QuestAction>();
+            hasActionOnFail = new Dictionary<QuestAction, QuestAction>();
+            _actionChanged = new BehaviorSubject<QuestAction>(currentAction);
             ActionChanged().Subscribe((action) =>
             {
                 #region Structure Logs
                 currentAction = action;
                 action.Init();
 
-                JournalLog currentLog = updateLogs.AddDiscreteLogWrapper(action.TaskName(), action.TaskDescription(), action.StartProgress(), action.Target());
+                //Shouldnt be called on save
+
+                if(currentLog==null)
+                currentLog = updateLogs.AddDiscreteLogWrapper(action.TaskName(), action.TaskDescription(), action.StartProgress(), action.Target());
+                
+                
                 action.UpdateScore().Subscribe((score) =>
                 {
                     if (!currentLog.HasBeenCompleted())
@@ -254,7 +261,7 @@ namespace WarhammerOldWorld
     {
         ~KillQuestAction() => killCount?.Dispose();
 
-        Subject<int> killCount = new Subject<int>();
+        Subject<int> killCount;
         [SaveableField(1)]
         int killsNeeded;
         [SaveableField(2)]
@@ -267,6 +274,7 @@ namespace WarhammerOldWorld
         {
             targetType = target;
             killsNeeded = targetNumber;
+            Init();
         }
 
         public override IObservable<int> UpdateScore() => killCount.AsObservable();
@@ -296,13 +304,19 @@ namespace WarhammerOldWorld
 
         public override TextObject TaskDescription() => new TextObject("Kill " + targetType.GetName().ToString());
 
-        public override int StartProgress() => 0;
+        public override int StartProgress() => kills;
         public override int Target() => killsNeeded;
         /// <summary>
         /// Inits class
         /// </summary>
         public override void Init()
         {
+
+            onComplete = new BehaviorSubject<bool>(false);
+            onFail = new BehaviorSubject<bool>(false);
+            logSubject = new Subject<TextObject>();
+            killCount = new Subject<int>();
+
             disposable = ModuleControllerSubModule.Instance.SceneChangeObservable().Subscribe((scene) =>
             {
                 Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe((sec) =>
