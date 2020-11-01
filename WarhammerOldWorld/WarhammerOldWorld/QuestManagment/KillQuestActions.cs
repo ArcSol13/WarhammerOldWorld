@@ -15,7 +15,7 @@ namespace WarhammerOldWorld.QuestManagment
     /// <summary>
     /// Action that is completed by killing certain types of specific enemies
     /// </summary>
-    class KillQuestAction : QuestAction
+    public class KillQuestAction : QuestAction
     {
         public KillQuestAction(BasicCharacterObject target, int targetNumber) : base()
         {
