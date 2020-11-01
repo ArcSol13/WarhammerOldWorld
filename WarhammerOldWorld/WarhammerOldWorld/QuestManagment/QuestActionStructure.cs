@@ -10,6 +10,9 @@ using TaleWorlds.SaveSystem;
 
 namespace WarhammerOldWorld.QuestManagment
 {
+    /// <summary>
+    /// Takes care of handling multi task Quests
+    /// </summary>
     class QuestActionStructure
     {
         public QuestActionStructure(QuestAction current, ILoggable updateLogs)
