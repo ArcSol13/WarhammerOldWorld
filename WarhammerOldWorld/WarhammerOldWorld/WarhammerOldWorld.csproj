@@ -187,11 +187,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="QuestManagment.cs" />
-    <Compile Include="CustomSubModule.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="ObjectManagment\Class1.cs" />
+    <Compile Include="Main\CustomSubModule.cs" />
+    <Compile Include="Main\Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestManagment\KillQuestActions.cs" />
+    <Compile Include="QuestManagment\QuestTypeDefiner.cs" />
+    <Compile Include="QuestManagment\QuestActionStructure.cs" />
+    <Compile Include="QuestManagment\QuestAction.cs" />
+    <Compile Include="QuestManagment\TestQuest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
