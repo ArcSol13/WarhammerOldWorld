@@ -191,11 +191,13 @@
     <Compile Include="Main\CustomSubModule.cs" />
     <Compile Include="Main\Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestManagment\Issues\TestIssue.cs" />
     <Compile Include="QuestManagment\KillQuestActions.cs" />
     <Compile Include="QuestManagment\QuestTypeDefiner.cs" />
     <Compile Include="QuestManagment\QuestActionStructure.cs" />
     <Compile Include="QuestManagment\QuestAction.cs" />
-    <Compile Include="QuestManagment\TestQuest.cs" />
+    <Compile Include="QuestManagment\KillUnitsQuest.cs" />
+    <Compile Include="QuestManagment\WarhammerQuestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

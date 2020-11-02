@@ -17,9 +17,9 @@ namespace WarhammerOldWorld.QuestManagment
     /// </summary>
     public class KillQuestAction : QuestAction
     {
-        public KillQuestAction(BasicCharacterObject target, int targetNumber) : base()
+        public KillQuestAction(List<BasicCharacterObject> targets, int targetNumber) : base()
         {
-            targetType = target;
+            targetsType = targets;
             killsNeeded = targetNumber;
             Init();
         }
@@ -33,14 +33,23 @@ namespace WarhammerOldWorld.QuestManagment
         [SaveableField(2)]
         int kills = 0;
         [SaveableField(3)]
-        BasicCharacterObject targetType;
+        List<BasicCharacterObject> targetsType;
 
         public override IObservable<int> UpdateScore() => killCount.AsObservable();
 
-        public override TextObject TaskName() => new TextObject("Kill Units");
+        public override TextObject TaskName()
+        {
+            var txt = new TextObject("Kill the following units:{UNITS}");
+            var str = "Kill the following units: ";
+            foreach (var troop in targetsType)
+                str += troop.GetName().ToString() + "/";
+            str = str.Remove(str.Length - 1);
+            txt.SetTextVariable("UNITS", str);
+            return new TextObject(str);
+        }
 
-        public override TextObject TaskDescription() => new TextObject("Kill " + targetType.GetName().ToString());
 
+        public override TextObject TaskDescription() => new TextObject("Kill the units fast!");
         public override int StartProgress() => kills;
         public override int Target() => killsNeeded;
         public override void Init()
@@ -82,7 +91,7 @@ namespace WarhammerOldWorld.QuestManagment
 
             if (newHealth < 1)
             {
-                if (agent.Character == targetType)
+                if (targetsType.Contains(agent.Character))
                 {
                     killCount.OnNext(++kills);
                 }

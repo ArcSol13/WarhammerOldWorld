@@ -17,17 +17,17 @@ namespace WarhammerOldWorld.QuestManagment
         JournalLog AddDiscreteLogWrapper(TextObject text, TextObject task, int currentProgress, int targetProgress);
         JournalLog AddLogWrapper(TextObject text);
     }
-    class TestQuest : QuestBase, ILoggable
+    class KillUnitsQuest : QuestBase, ILoggable
     {
         public override bool IsSpecialQuest => true;
 
         [SaveableField(1)]
         QuestActionStructure structure;
-        public TestQuest(Hero questGiver, BasicCharacterObject target, int targetCount) : base("test_quest_1", questGiver, CampaignTime.DaysFromNow(10), 99999999)
+        public KillUnitsQuest(Hero questGiver, List<BasicCharacterObject> targets, int targetCount) : base("test_quest_1", questGiver, CampaignTime.DaysFromNow(10), 99999999)
         {
-            KillQuestAction task1 = new KillQuestAction(target, targetCount);
+            KillQuestAction task1 = new KillQuestAction(targets, targetCount);
             structure = new QuestActionStructure(task1, this);
-            structure.AddQuestActionOnComplete(task1, new KillQuestAction(target, targetCount));
+            structure.AddQuestActionOnComplete(task1, new KillQuestAction(targets, targetCount));
             structure.Completed().Where((x) => x).Subscribe((x) => CompleteQuestWithSuccess());
             structure.Failed().Where((x) => x).Subscribe((x) => CompleteQuestWithFail());
             SetDialogs();

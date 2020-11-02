@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.Core;
 
 namespace WarhammerOldWorld.QuestManagment
 {
@@ -18,7 +19,7 @@ namespace WarhammerOldWorld.QuestManagment
         protected override void DefineClassTypes()
         {
             // Your quest goes here, second argument is the SaveID
-            AddClassDefinition(typeof(TestQuest), 1);
+            AddClassDefinition(typeof(KillUnitsQuest), 1);
             AddClassDefinition(typeof(QuestAction), 2);
             AddClassDefinition(typeof(QuestActionStructure), 4);
             AddClassDefinition(typeof(KillQuestAction), 8);
@@ -27,6 +28,7 @@ namespace WarhammerOldWorld.QuestManagment
         protected override void DefineContainerDefinitions()
         {
             ConstructContainerDefinition(typeof(Dictionary<QuestAction, QuestAction>));
+            ConstructContainerDefinition(typeof(List<BasicCharacterObject>));
         }
     }
 }
