@@ -68,15 +68,14 @@ namespace WarhammerOldWorld.QuestManagment.Issues
             this.issueOwner = issueOwner;
         }
         //Title on that is displayed on the dialog after talking to npc
-        public override TextObject Title => new TextObject("I have a issue this is the title");
+        public override TextObject Title => new TextObject("Problem with Troops.");
         //Not sure where this is 
-        public override TextObject Description => new TextObject("I have a issue this is the description");
+        public override TextObject Description => new TextObject("This lord has a problem with a certain troop.");
         //Thi is the what the npc says after players says I heard you have a problem...
-        protected override TextObject IssueBriefByIssueGiver => new TextObject("Briefing");
-
-        protected override TextObject IssueAcceptByPlayer => new TextObject("Accepted by player");
+        protected override TextObject IssueBriefByIssueGiver => new TextObject("There is a matter you would be perfect for; you look like a capable sort. There is a grudge that needs settling! Our warriors are stretched thin guarding the deep and I lack the warriors to spare, a brewery was raided by filthy grobbies and this cannot go unpunished. Seek vengeance on my behalf and you shall be rewarded, slay their kin and return once you have reaped a deadly toll. ");
+        protected override TextObject IssueAcceptByPlayer => new TextObject(" Okay! :smile: ");
         protected override TextObject IssueQuestSolutionExplanationByIssueGiver => new TextObject("Kill kill kill kill");
-        protected override TextObject IssueQuestSolutionAcceptByPlayer => new TextObject("Yes");
+        protected override TextObject IssueQuestSolutionAcceptByPlayer => new TextObject(" Okay! :smile:");
         // can troops/companion solve quest?
         protected override bool IsThereAlternativeSolution => false;
         // Can player finish it?

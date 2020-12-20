@@ -45,10 +45,13 @@ namespace WarhammerOldWorld
             {
 
                 var questGiver = MBObjectManager.Instance.GetObject<Hero>((x) => { return x != Hero.MainHero && x.IsAlive; });
-                var target = MBObjectManager.Instance.GetObject<BasicCharacterObject>(BasicCharacterObjectManager.Instance.GetXmlByID("looter").Attributes[0].Value);
 
+                var target = MBObjectManager.Instance.GetObject<BasicCharacterObject>(BasicCharacterObjectManager.Instance.GetXmlByID("looter").Attributes[0].Value);
+                
+                //Issues
+                new QuestManagment.Issues.TestIssue(questGiver);
                 //starting quest here becouse i didnt figure out how to assign quests to npcs
-                 new QuestManagment.TestQuest(questGiver, target, 20).StartQuest();
+                new QuestManagment.KillUnitsQuest(questGiver, new List<BasicCharacterObject>() { target }, 20).StartQuest();
             }
         }
         protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
