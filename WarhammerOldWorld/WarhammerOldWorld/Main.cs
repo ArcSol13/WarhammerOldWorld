@@ -52,7 +52,7 @@ namespace WarhammerOldWorld
             var target = MBObjectManager.Instance.GetObject<BasicCharacterObject>(BasicCharacterObjectManager.Instance.GetXmlByID("looter").Attributes[0].Value);
            
             //starting quest here becouse i didnt figure out how to assign quests to npcs
-            Observable.Timer(TimeSpan.FromSeconds(10)).Subscribe((X) => new TestQuest(questGiver,target,20).StartQuest());
+            //Observable.Timer(TimeSpan.FromSeconds(10)).Subscribe((X) => new TestQuest(questGiver,target,20).StartQuest());
         }
         protected override void OnSubModuleLoad()
         {
