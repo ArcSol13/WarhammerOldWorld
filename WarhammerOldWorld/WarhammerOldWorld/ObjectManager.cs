@@ -8,7 +8,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ObjectSystem;
 
-namespace WarhammerOldWorld.ObjectManagment
+namespace WarhammerOldWorld
 {
     /// <summary>
     /// Generic Instantiator
