@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NPCCharacters>
+  <!-- COMPANION TEST ############################################################################################ -->
+  <NPCCharacter id="companion_comp_21" name="Drakul" voice="ironic" culture="Culture.vampire" is_female="false" default_group="Infantry" is_hero="true" is_companion="true" occupation="Companion">
+    <face>
+      <BodyProperties version="4" key="00000C0A0CBC35408E34AC966569A37AA3C2C68AB77778351AB589B4A2D618C7000B90090B758421000000000000000000000000000000000000000000282000" />
+      <BodyPropertiesMax version="4" key="00000C0A0CBC35408E34AC966569A37AA3C2C68AB77778351AB589B4A2D618C7000B90090B758421000000000000000000000000000000000000000000282000" />
+    </face>
+    <Components>
+      <Companion id="companion_comp_21" />
+    </Components>
+    <skills>
+      <skill id="OneHanded" value="55" />
+      <skill id="TwoHanded" value="35" />
+      <skill id="Riding" value="60" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster>
+        <equipment slot="Item0" id="Item.short_sword_t3" />
+      </EquipmentRoster>
+      <EquipmentSet id="npc_armed_wanderer_equipment_template_vlandia" civilian="true" />
+      <equipment slot="Body" id="Item.fur_armor_with_strap" />
+    </Equipments>
+  </NPCCharacter>
+</NPCCharacters>

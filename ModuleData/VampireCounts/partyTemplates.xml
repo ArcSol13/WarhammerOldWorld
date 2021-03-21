@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<partyTemplates>
+	<!-- TEST ############################################################################################ -->
+  <MBPartyTemplate id="vampire_party_01" >
+    <stacks>
+      <PartyTemplateStack min_value="18" max_value="18" troop="NPCCharacter.zombie" />
+      <PartyTemplateStack min_value="17" max_value="17" troop="NPCCharacter.skeleton_warrior" />
+      <PartyTemplateStack min_value="15" max_value="15" troop="NPCCharacter.c_skeleton_spearman" />
+      <PartyTemplateStack min_value="18" max_value="18" troop="NPCCharacter.crypt_ghoul" />
+    </stacks>
+  </MBPartyTemplate>
+  <!-- Roaming Zombies ############################################################################################ -->
+    <MBPartyTemplate id="vampire_party_02" >
+    <stacks>
+      <PartyTemplateStack min_value="25" max_value="50" troop="NPCCharacter.zombie" />
+    </stacks>
+  </MBPartyTemplate>
+  <!-- Zombie Horde ############################################################################################ -->
+  <MBPartyTemplate id="vampire_party_03" >
+    <stacks>
+      <PartyTemplateStack min_value="75" max_value="100" troop="NPCCharacter.zombie" />
+    </stacks>
+  </MBPartyTemplate>
+</partyTemplates>
