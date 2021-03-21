@@ -13,7 +13,7 @@
   </DependedModules>
   <SubModules>
     <SubModule>
-      <Name value="ExampleMod"/>
+      <Name value="WarhammerOldWorld"/>
       <DLLName value="WarhammerOldWorld.dll"/>
       <SubModuleClassType value="WarhammerOldWorld.Main"/>
       <Tags>
