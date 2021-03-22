@@ -17,7 +17,7 @@ namespace WarhammerOldWorld
     {
         public ObjectManager() 
         {
-            LoadXmls();
+            //LoadXmls();
         }
         public T Instantiate()
         {
