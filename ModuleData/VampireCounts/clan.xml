@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Factions>
+  <Faction id="clan_vampire_1"
+           name="[Von Carstein]"
+           tier="6"
+           owner="Hero.lord_vampire_01"
+           culture="Culture.vampire"
+           super_faction="Kingdom.vampire"
+           banner_key="1.116.116.1544.1515.769.791.1.0.270.120.142.116.498.498.768.784.1.1.0" 
+		   text="Description" />
+</Factions>

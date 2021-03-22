@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NPCCharacters>
+  <NPCCharacter name="Zombie">
+		<Attribute name="Unbreakable"/>
+		<Attribute name="Expendable"/>
+		<Attribute name="Deathblow"/>
+		<Attribute name="Happy"/>
+		<Attribute name="Fast"/>
+  </NPCCharacter>
+  <NPCCharacter name="Skeleton Warrior">
+		<Attribute name="HealingAura"/>
+  </NPCCharacter>
+  <NPCCharacter name="Champion Skeleton Spearman">
+		<Attribute name="Frenzy"/>
+  </NPCCharacter>
+</NPCCharacters>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Heroes>
+  <Hero id="lord_vampire_01" is_noble="true" spouse="Hero.lord_vampire_02" faction="Faction.clan_vampire_1" text="The Vampire King!" />
+  <Hero id="lord_vampire_02" is_noble="true" spouse="Hero.lord_vampire_01" faction="Faction.clan_vampire_1" text="A real bitch!" />
+</Heroes>

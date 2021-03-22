@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Kingdoms>
+  <Kingdom id="vampire" owner="Hero.lord_vampire_01" banner_key="1.116.116.1544.1515.769.791.1.0.270.120.142.116.498.498.768.784.1.1.0" primary_banner_color="0xff0ad611" secondary_banner_color="0xff0ad611" label_color="ff0ad611" color="FF5C2017" color2="FFECBA44" alternative_color="FFDBBA27" alternative_color2="ff910101" culture="Culture.vampire" settlement_banner_mesh="encounter_flag_d" flag_mesh="info_screen_flags_c" name="Vampire Counts" short_name="Vampires" title="Vampire Count" ruler_title="Master Vampire" text="Suckyablood!">
+    <relationships>
+      <relationship kingdom="Kingdom.sturgia" value="0" isAtWar="false" />
+    </relationships>
+    <policies>
+      <policy id="policy_feudal_inheritance" />
+      <policy id="policy_castle_charters" />
+    </policies>
+  </Kingdom>
+</Kingdoms>

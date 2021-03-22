@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NPCCharacters>
+  <!-- LORD 1 ############################################################################################ -->
+  <NPCCharacter id="lord_vampire_01" name="Vlad von Carstein" age="48" voice="ironic" default_group="Cavalry" is_hero="true" culture="Culture.vampire" occupation="Lord">
+    <face>
+      <!--face_key value="0000fe42c000220458c56743d5b5ab56396a8c717b876e66c7b287ab79c2a84b0005400905c96766000000000000000000000000000000000000000001282000" /-->
+      <BodyProperties version="4" key="0000FC02C000220458C56743D5B5AB56396A8C717B876E66C7B287AB79C2A84B0000000305C96766000000000000000000000000000000000000000000F02000" />
+    </face>
+    <skills></skills>
+    <Traits>
+      <Trait id="BalancedFightingSkills" value="4" />
+      <Trait id="Commander" value="6" />
+      <Trait id="Politician" value="7" />
+      <Trait id="Manager" value="9" />
+      <Trait id="Calculating" value="1" />
+      <Trait id="Mercy" value="1" />
+      <Trait id="Valor" value="-1" />
+    </Traits>
+    <Equipments>
+      <EquipmentRoster />
+      <EquipmentSet id="vla_bat_template_medium" />
+      <EquipmentSet id="vla_civ_template_default" civilian="true" />
+    </Equipments>
+  </NPCCharacter>
+  <!-- LORD 2 ############################################################################################ -->
+  <NPCCharacter id="lord_vampire_02" name="Isabella von Carstein" age="47" voice="ironic" is_female="true" culture="Culture.vampire" is_hero="true" default_group="Cavalry" occupation="Lord">
+    <face>
+      <!--face_key value="000044000000000577707780b7c07777c2bb71f7eff77aa7956746991c7775c70000000005c7966a000000000000000000000000000000000000000000000100" /-->
+      <BodyProperties version="4" key="0000AC0E50FC30045B8888888888888757598897D83C8925C7E38F398578987402884624F80575210000000000000000000000000000000000000000011C1043" />
+    </face>
+    <Traits>
+      <Trait id="Politician" value="6" />
+      <Trait id="Manager" value="6" />
+      <Trait id="Mercy" value="1" />
+      <Trait id="Honor" value="1" />
+    </Traits>
+    <Equipments>
+      <EquipmentSet id="vla_bat_template_medium" />
+      <EquipmentSet id="vla_noncom_template_default" civilian="true" />
+    </Equipments>
+  </NPCCharacter>
+  
+</NPCCharacters>
