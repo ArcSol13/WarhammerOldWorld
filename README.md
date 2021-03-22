@@ -1,15 +1,9 @@
 # Warhammer-OldWorld
 
-## Creating a module subpart
+## Creating and adding a new module
 
-We can individualize parts of the mod for easier subdivision of labor. This will make it easier to add new features without stepping on each other's toes.
+Using the ModuleManager, creating a SubModule should follow the same pattern that you would follow while making your own separte module, barring one difference: inherit from CustomSubModule rather than MBSubModuleBase.
 
-Create a class of type CustomSubModule.
+Once your SubModule is created, add it to the activeModules list in the ModuleManager.
 
-Do your initialization in OnLoad, do your deinitialization in OnUnload.
-
-Do updates/checks in OnUpdate, called every frame, avoid using costly operations.
-
-## Adding a module subpart to the system
-
-In-progress.
+Once this is done, your module will be utilized the same way it would be independently, as the module manager will call all MBSubModuleBase methods for each module in the activeModules list.
