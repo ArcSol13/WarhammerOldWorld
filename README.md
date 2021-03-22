@@ -2,7 +2,7 @@
 
 ## Creating and adding a new module
 
-Using the ModuleManager, creating a SubModule should follow the same pattern that you would follow while making your own separte module, barring one difference: inherit from CustomSubModule rather than MBSubModuleBase.
+Using the ModuleManager, creating a SubModule should follow the same pattern that you would follow while making your own separate module, barring one difference: inherit from CustomSubModule rather than MBSubModuleBase.
 
 Once your SubModule is created, add it to the activeModules list in the ModuleManager.
 
