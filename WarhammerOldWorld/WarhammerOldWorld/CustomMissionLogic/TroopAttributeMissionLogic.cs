@@ -67,8 +67,8 @@ namespace WarhammerOldWorld.CustomMissionLogic
                 case "HealingAura":
                     agent.AddComponent(new HealingAuraAgentComponent(agent, base.Mission));
                     break;
-                case "Frenzy":
-                    agent.AddComponent(new FrenzyAgentComponent(agent));
+                case "Undead":
+                    agent.AddComponent(new UndeadMoraleAgentComponent(agent));
                     break;
             }
         }
