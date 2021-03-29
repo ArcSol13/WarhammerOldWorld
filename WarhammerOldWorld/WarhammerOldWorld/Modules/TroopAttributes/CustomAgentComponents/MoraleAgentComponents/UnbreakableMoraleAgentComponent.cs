@@ -1,7 +1,7 @@
 ﻿using TaleWorlds.MountAndBlade;
 using WarhammerOldWorld.Extensions;
 
-namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
+namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents.MoraleAgentComponents
 {
     public class UnbreakableMoraleAgentComponent : MoraleAgentComponent
     {
@@ -26,7 +26,7 @@ namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
         protected override void Initialize()
         {
             base.Initialize();
-            this.InitializeMorale();
+            InitializeMorale();
         }
 
         private void InitializeMorale()

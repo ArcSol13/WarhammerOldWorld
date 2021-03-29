@@ -4,7 +4,7 @@ using TaleWorlds.MountAndBlade;
 using WarhammerOldWorld.Combat;
 using WarhammerOldWorld.Extensions;
 
-namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
+namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents.MoraleAgentComponents
 {
     public class UndeadMoraleAgentComponent : MoraleAgentComponent
     {
@@ -23,22 +23,22 @@ namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
         {
             base.Initialize();
             float time = MBCommon.GetTime(MBCommon.TimeType.Mission);
-            this.crumbleTimer = new Timer(time, crumbleFrequencyInSeconds, true);
-            this.InitializeMorale();
+            crumbleTimer = new Timer(time, crumbleFrequencyInSeconds, true);
+            InitializeMorale();
         }
 
         protected override void OnTickAsAI(float dt)
         {
-            if(base.Morale < 20f)
+            if (Morale < 20f)
             {
                 canCrumble = crumbleTimer.Check(MBCommon.GetTime(MBCommon.TimeType.Mission));
-                if(canCrumble)
+                if (canCrumble)
                 {
-                    float damageTaken = 0.01f / base.Morale;
+                    float damageTaken = 0.01f / Morale;
                     damageTaken = MBMath.ClampFloat(damageTaken, 0, 1);
-                    this.Agent.ApplyDamage(damageTaken);
+                    Agent.ApplyDamage(damageTaken);
                     crumbleTimer.Reset(MBCommon.GetTime(MBCommon.TimeType.Mission));
-                    Helpers.Say(this.Agent.Name + " took " + damageTaken + " crumbling damage from low binding");
+                    Helpers.Say(Agent.Name + " took " + damageTaken + " crumbling damage from low binding");
                 }
             }
         }
@@ -48,10 +48,10 @@ namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
             Helpers.Say("Initialized UndeadMoraleAgentComponent");
             float num = 35f;
             int num2 = MBRandom.RandomInt(30);
-            float num3 = num + (float)num2;
-            num3 = MissionGameModels.Current.BattleMoraleModel.GetEffectiveInitialMorale(this.Agent, num3);
+            float num3 = num + num2;
+            num3 = MissionGameModels.Current.BattleMoraleModel.GetEffectiveInitialMorale(Agent, num3);
             num3 = MBMath.ClampFloat(num3, 15f, 100f);
-            base.Morale = num3;
+            Morale = num3;
         }
 
         public new void Panic()

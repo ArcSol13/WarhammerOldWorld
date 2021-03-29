@@ -317,9 +317,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Combat\AgentCombatExtensions.cs" />
+    <Compile Include="Combat\MissionHelper.cs" />
     <Compile Include="CustomMissionLogic\TowAgentMoraleInteractionLogic.cs" />
     <Compile Include="CustomMissionLogic\TroopAttributeMissionLogic.cs" />
-    <Compile Include="Modules\TroopAttributeSubModule.cs" />
+    <Compile Include="Modules\TroopAttributes\TroopAttributeSubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modules\QuestSubModule.cs" />
     <Compile Include="ObjectManager.cs" />

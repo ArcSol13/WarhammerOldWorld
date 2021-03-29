@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TaleWorlds.Core;
 using WarhammerOldWorld.Modules;
-using TaleWorlds.CampaignSystem;
+using WarhammerOldWorld.Modules.TroopAttributes;
 
 namespace WarhammerOldWorld
 {

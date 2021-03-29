@@ -2,10 +2,10 @@
 using System.Xml;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Source.Missions.Handlers.Logic;
-using WarhammerOldWorld.CustomMissionLogic;
 using WarhammerOldWorld.Extensions;
+using WarhammerOldWorld.Modules.TroopAttributes.CustomMissionLogic;
 
-namespace WarhammerOldWorld.Modules
+namespace WarhammerOldWorld.Modules.TroopAttributes
 {
     public class TroopAttributeSubModule : CustomSubModule
     {
@@ -30,10 +30,10 @@ namespace WarhammerOldWorld.Modules
             XmlDocument attributeXml = new XmlDocument();
             attributeXml.Load("C:\\Steam\\steamapps\\common\\Mount & Blade II Bannerlord\\Modules\\WarhammerOldWorld\\ModuleData\\VampireCounts\\attributes.xml");
             XmlNodeList characters = attributeXml.GetElementsByTagName("NPCCharacter");
-            foreach(XmlNode character in characters)
+            foreach (XmlNode character in characters)
             {
                 List<string> attributes = new List<string>();
-                foreach(XmlNode attributeNode in character.ChildNodes)
+                foreach (XmlNode attributeNode in character.ChildNodes)
                 {
                     if (attributeNode.NodeType == XmlNodeType.Comment)
                     {

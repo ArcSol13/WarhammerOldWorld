@@ -4,7 +4,7 @@ using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using WarhammerOldWorld.Combat;
 
-namespace WarhammerOldWorld.CustomAgentComponents
+namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents
 {
     public class HealingAuraAgentComponent : AgentComponent
     {
@@ -15,10 +15,10 @@ namespace WarhammerOldWorld.CustomAgentComponents
         private float healRadius = 5;
         private float healAmount = 5;
 
-        
+
         public HealingAuraAgentComponent(Agent agent) : base(agent)
         {
-            this.healTimer = new Timer(GetHealStartTime(), secondsBetweenHealProcs, true);
+            healTimer = new Timer(GetHealStartTime(), secondsBetweenHealProcs, true);
         }
 
         protected override void OnTickAsAI(float dt)

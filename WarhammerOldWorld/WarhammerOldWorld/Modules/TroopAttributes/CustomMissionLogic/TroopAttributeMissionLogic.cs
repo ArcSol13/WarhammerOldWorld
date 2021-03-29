@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
-using WarhammerOldWorld.CustomAgentComponents;
-using WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents;
 using WarhammerOldWorld.Extensions;
+using WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents;
+using WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents.MoraleAgentComponents;
 
-namespace WarhammerOldWorld.CustomMissionLogic
+namespace WarhammerOldWorld.Modules.TroopAttributes.CustomMissionLogic
 {
     class TroopAttributeMissionLogic : MissionLogic
     {
@@ -18,7 +18,7 @@ namespace WarhammerOldWorld.CustomMissionLogic
             base.OnAgentCreated(agent);
 
             List<string> attributeList = agent.GetAttributes();
-            
+
             foreach (string attribute in attributeList)
             {
                 ApplyAgentComponentsForAttribute(attribute, agent);
