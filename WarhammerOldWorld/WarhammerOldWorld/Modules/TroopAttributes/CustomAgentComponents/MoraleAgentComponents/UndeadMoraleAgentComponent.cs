@@ -38,14 +38,13 @@ namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents.Morale
                     damageTaken = MBMath.ClampFloat(damageTaken, 0, 1);
                     Agent.ApplyDamage(damageTaken);
                     crumbleTimer.Reset(MBCommon.GetTime(MBCommon.TimeType.Mission));
-                    Helpers.Say(Agent.Name + " took " + damageTaken + " crumbling damage from low binding");
+                    //Helpers.Say(Agent.Name + " took " + damageTaken + " crumbling damage from low binding");
                 }
             }
         }
 
         private void InitializeMorale()
         {
-            Helpers.Say("Initialized UndeadMoraleAgentComponent");
             float num = 35f;
             int num2 = MBRandom.RandomInt(30);
             float num3 = num + num2;

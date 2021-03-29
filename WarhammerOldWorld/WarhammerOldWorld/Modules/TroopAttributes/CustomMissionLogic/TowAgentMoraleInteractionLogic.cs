@@ -85,7 +85,7 @@ namespace WarhammerOldWorld.Modules.TroopAttributes.CustomMissionLogic
             {
                 if (agent.GetAttributes().Contains("Expendable"))
                 {
-                    Helpers.Say(agent.Name + " died, but is Expendable. Nearby allies lost 0 morale.");
+                    //Helpers.Say(agent.Name + " died, but is Expendable. Nearby allies lost 0 morale.");
                     float moraleSum = 0f;
                     nearbyAgents.ToList().ForEach(a =>
                     {
@@ -101,7 +101,7 @@ namespace WarhammerOldWorld.Modules.TroopAttributes.CustomMissionLogic
                     }
                     );
                     float averageMorale = moraleSum / nearbyAgents.ToList().Count;
-                    Helpers.Say("Average morale of nearby allies: " + averageMorale);
+                    //Helpers.Say("Average morale of nearby allies: " + averageMorale);
                     return true;
                 }
             }
