@@ -325,7 +325,6 @@
     <Compile Include="Modules\QuestSubModule.cs" />
     <Compile Include="ObjectManager.cs" />
     <Compile Include="Modules\TroopAttributes\CustomAgentComponents\HealingAuraAgentComponent.cs" />
-    <Compile Include="Modules\TroopAttributes\CustomAgentComponents\MoraleAgentComponents\UnbreakableMoraleAgentComponent.cs" />
     <Compile Include="Modules\TroopAttributes\CustomAgentComponents\MoraleAgentComponents\UndeadMoraleAgentComponent.cs" />
     <Compile Include="Modules\CustomSubModule.cs" />
     <Compile Include="Extensions\AgentExtensions.cs" />
