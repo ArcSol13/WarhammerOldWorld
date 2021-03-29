@@ -8,22 +8,30 @@ namespace WarhammerOldWorld.Extensions
 {
     public static class AgentExtensions
     {
-        public static List<MoraleAgentComponent> getMoraleComponents(this Agent agent)
+        public static Dictionary<string, List<string>> TroopNameToAttributeList = new Dictionary<string, List<string>>();
+        public static List<string> GetAttributes(this Agent agent)
+        {
+            if (agent != null && agent.Character != null)
+            {
+                string characterName = agent.Character.GetName().ToString();
+
+                List<string> attributeList;
+                if (TroopNameToAttributeList.TryGetValue(characterName, out attributeList))
+                {
+                    return attributeList;
+                }
+            }
+            return new List<string>();
+        }
+
+        public static List<MoraleAgentComponent> GetCustomMoraleComponents(this Agent agent)
         {
             List<MoraleAgentComponent> components = new List<MoraleAgentComponent>();
+            List<AgentComponent> agentComponents = agent.Components
+                .Where(component => component.GetType().IsSubclassOf(typeof(MoraleAgentComponent)) && component.GetType() != typeof(MoraleAgentComponent))
+                .ToList();
 
-            Type[] types = Assembly.GetExecutingAssembly().GetTypes()
-              .Where(t => String.Equals(t.Namespace, "TheOldWorldDev.CustomAgentComponents.MoraleAgentComponents", StringComparison.Ordinal))
-              .ToArray();
-
-            components.AddIfNotNull(agent.GetComponent<MoraleAgentComponent>());
-            foreach (Type type in types)
-            {
-                MethodInfo agentGetComponent = typeof(Agent).GetMethod("GetComponent", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static);
-                agentGetComponent = agentGetComponent.MakeGenericMethod(type);
-                MoraleAgentComponent component = agentGetComponent.Invoke(agent, null) as MoraleAgentComponent;
-                components.AddIfNotNull(component);
-            }
+            agentComponents.ForEach(component => components.AddIfNotNull(component as MoraleAgentComponent));
 
             return components;
         }

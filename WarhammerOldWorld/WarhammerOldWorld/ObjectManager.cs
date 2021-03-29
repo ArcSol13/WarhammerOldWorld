@@ -21,7 +21,6 @@ namespace WarhammerOldWorld
         }
         public T Instantiate()
         {
-
             var result = MBObjectManager.Instance.CreateObjectFromXmlNode(xmlNodes.GetRandomElement());
             try
             {

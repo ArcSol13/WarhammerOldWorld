@@ -17,7 +17,7 @@
 		<SubModule>
 			<Name value="WarhammerOldWorld"/>
 			<DLLName value="WarhammerOldWorld.dll"/>
-			<SubModuleClassType value="WarhammerOldWorld.ModuleController"/>
+			<SubModuleClassType value="WarhammerOldWorld.ModuleManager"/>
 			<Tags>
 				<Tag key="DedicatedServerType" value="none" />
 				<Tag key="IsNoRenderModeElement" value="false" />
