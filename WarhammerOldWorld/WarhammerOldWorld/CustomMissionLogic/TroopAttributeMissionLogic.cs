@@ -16,56 +16,27 @@ namespace WarhammerOldWorld.CustomMissionLogic
         public override void OnAgentCreated(Agent agent)
         {
             base.OnAgentCreated(agent);
-            if(agent.Character != null)
-            {
-                BasicCharacterObject character = agent.Character;
 
-                List<string> attributeList = character.getAttributes();
-                
-                foreach (string attribute in attributeList)
-                {
-                    applyAgentComponentsForAttribute(attribute, agent);
-                }
-
-                if (agent.Character.Culture != null)
-                {
-                    if (agent.Character.Culture.StringId.Equals("vampire"))
-                    {
-                        giveVampireComponentsToAgent(agent);
-                    }
-                }
-            }
+            List<string> attributeList = agent.GetAttributes();
             
+            foreach (string attribute in attributeList)
+            {
+                ApplyAgentComponentsForAttribute(attribute, agent);
+            }
         }
 
-        private void giveVampireComponentsToAgent(Agent agent)
-        {
-            // Remove default retreat component
-            AgentComponent defaultRetreatComponent = agent.GetComponent<RetreatAgentComponent>();
-            agent.RemoveComponentIfNotNull(defaultRetreatComponent);
-
-            // Replace default morale component with vamp component
-            AgentComponent moraleComponent = agent.GetComponent<MoraleAgentComponent>();
-            agent.RemoveComponentIfNotNull(moraleComponent);
-            agent.AddComponent(new VampireMoraleAgentComponent(agent));
-        }
-
-        private void applyAgentComponentsForAttribute(string attribute, Agent agent)
+        private void ApplyAgentComponentsForAttribute(string attribute, Agent agent)
         {
             switch (attribute)
             {
                 case "Unbreakable":
-                    // Unbreakable agents shouldn't be subject to default retreat/morale logic
-                    agent.RemoveComponentIfNotNull(agent.GetComponent<MoraleAgentComponent>());
-
                     agent.AddComponent(new UnbreakableMoraleAgentComponent(agent));
                     break;
                 case "Expendable":
-                    //components.Add(new ExpendableMoraleAgentComponent(agent));
-                    //components.Add(new ExpendableRetreatAgentComponent(agent));
+                    //Expendable units are handled in the mission's morale interaction logic
                     break;
                 case "HealingAura":
-                    agent.AddComponent(new HealingAuraAgentComponent(agent, base.Mission));
+                    agent.AddComponent(new HealingAuraAgentComponent(agent));
                     break;
                 case "Undead":
                     agent.AddComponent(new UndeadMoraleAgentComponent(agent));

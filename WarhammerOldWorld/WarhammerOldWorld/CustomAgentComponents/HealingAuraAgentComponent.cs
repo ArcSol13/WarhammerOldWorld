@@ -9,15 +9,15 @@ namespace WarhammerOldWorld.CustomAgentComponents
     public class HealingAuraAgentComponent : AgentComponent
     {
         private Timer healTimer;
+        private readonly Mission currentMission = MissionHelper.GetCurrentMission();
         private float secondsBetweenHealProcs = 5;
         private bool healReady = false;
         private float healRadius = 5;
         private float healAmount = 5;
 
-        private Mission currentMission;
-        public HealingAuraAgentComponent(Agent agent, Mission mission) : base(agent)
+        
+        public HealingAuraAgentComponent(Agent agent) : base(agent)
         {
-            currentMission = mission;
             this.healTimer = new Timer(GetHealStartTime(), secondsBetweenHealProcs, true);
         }
 

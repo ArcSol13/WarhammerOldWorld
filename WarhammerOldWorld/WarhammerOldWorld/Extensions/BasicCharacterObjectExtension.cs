@@ -5,16 +5,16 @@ namespace WarhammerOldWorld.Extensions
 {
     public static class BasicCharacterObjectExtension
     {
-        public static Dictionary<string, List<string>> troopNameToAttributeList = new Dictionary<string, List<string>>();
+        public static Dictionary<string, List<string>> TroopNameToAttributeList = new Dictionary<string, List<string>>();
 
-        public static List<string> getAttributes(this BasicCharacterObject character)
+        public static List<string> GetAttributes(this BasicCharacterObject character)
         {
             if (character != null)
             {
                 string characterName = character.GetName().ToString();
 
                 List<string> attributeList;
-                if (troopNameToAttributeList.TryGetValue(characterName, out attributeList))
+                if (TroopNameToAttributeList.TryGetValue(characterName, out attributeList))
                 {
                     return attributeList;
                 }

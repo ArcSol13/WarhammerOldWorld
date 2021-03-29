@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using TaleWorlds.Core;
 using WarhammerOldWorld.Modules;
+using TaleWorlds.CampaignSystem;
 
 namespace WarhammerOldWorld
 {
-    public class ModuleController : MBSubModuleBase
+    public class ModuleManager : MBSubModuleBase
     {
         private readonly List<CustomSubModule> activeModules = new List<CustomSubModule>()
         {
@@ -20,6 +21,7 @@ namespace WarhammerOldWorld
             foreach (var module in activeModules)
                 module.OnApplicationTick(dt);
         }
+
         public override void OnGameLoaded(Game game, object initializerObject)
         {
             base.OnGameLoaded(game, initializerObject);

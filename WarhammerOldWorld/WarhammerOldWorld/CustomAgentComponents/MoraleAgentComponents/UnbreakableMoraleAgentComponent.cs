@@ -1,36 +1,21 @@
 ﻿using TaleWorlds.MountAndBlade;
+using WarhammerOldWorld.Extensions;
 
 namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
 {
-    class UnbreakableMoraleAgentComponent : MoraleAgentComponent
+    public class UnbreakableMoraleAgentComponent : MoraleAgentComponent
     {
-        private float _morale = 100f;
-
-        public new bool IsRetreating
-        {
-            get
-            {
-                return false;
-            }
-        }
-
-        public new bool IsPanicked
-        {
-            get
-            {
-                return false;
-            }
-        }
-
         public new float Morale
         {
             get
             {
-                return this._morale;
+                Helpers.Say(base.Morale.ToString());
+                return base.Morale;
             }
             set
             {
-                this._morale = 100f;
+                Helpers.Say(base.Morale.ToString());
+                base.Morale = 100f;
             }
         }
 
@@ -47,7 +32,14 @@ namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
         private void InitializeMorale()
         {
             Helpers.Say("Unbreakable initialize morale");
-            this._morale = 100f;
+            base.Morale = 100f;
+        }
+        protected override void OnTickAsAI(float dt)
+        {
+            Agent.GetCustomMoraleComponents().ForEach(component =>
+            {
+                component.Morale = 100;
+            });
         }
 
         public new void Panic()
