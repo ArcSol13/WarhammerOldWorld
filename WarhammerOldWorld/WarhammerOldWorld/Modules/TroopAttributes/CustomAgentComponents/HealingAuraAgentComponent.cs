@@ -37,7 +37,7 @@ namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents
                         //Prevent overhealing with Math.Min
                         agent.SyncHealthToClient();
                         agent.Heal(healAmount);
-                        Helpers.Say(Agent.Name + " healed " + agent.Character.Name + " from " + origHealth + " to " + agent.Health);
+                        //Helpers.Say(Agent.Name + " healed " + agent.Character.Name + " from " + origHealth + " to " + agent.Health);
                     }
                 }
                 healTimer.Reset(MBCommon.GetTime(MBCommon.TimeType.Mission));
