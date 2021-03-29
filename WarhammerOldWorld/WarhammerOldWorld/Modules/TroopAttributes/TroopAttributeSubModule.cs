@@ -16,14 +16,14 @@ namespace WarhammerOldWorld.Modules.TroopAttributes
         public override void OnMissionBehaviourInitialize(Mission mission)
         {
             mission.AddMissionBehaviour(new TroopAttributeMissionLogic());
-            populateTroopAttributes();
+            PopulateTroopAttributes();
 
             // Replace the default morale interaction logic with our new custom morale logic
             mission.RemoveMissionBehaviour(mission.GetMissionBehaviour<AgentMoraleInteractionLogic>());
             mission.AddMissionBehaviour(new TowAgentMoraleInteractionLogic());
         }
 
-        private void populateTroopAttributes()
+        private void PopulateTroopAttributes()
         {
             Dictionary<string, List<string>> troopNameToAttributeList = new Dictionary<string, List<string>>();
 
