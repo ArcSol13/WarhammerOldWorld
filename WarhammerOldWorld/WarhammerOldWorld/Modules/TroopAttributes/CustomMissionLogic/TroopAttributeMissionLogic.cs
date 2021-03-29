@@ -29,9 +29,6 @@ namespace WarhammerOldWorld.Modules.TroopAttributes.CustomMissionLogic
         {
             switch (attribute)
             {
-                case "Unbreakable":
-                    agent.AddComponent(new UnbreakableMoraleAgentComponent(agent));
-                    break;
                 case "Expendable":
                     //Expendable units are handled in the mission's morale interaction logic
                     break;
