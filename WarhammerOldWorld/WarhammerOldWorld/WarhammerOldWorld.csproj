@@ -318,15 +318,15 @@
   <ItemGroup>
     <Compile Include="Combat\AgentCombatExtensions.cs" />
     <Compile Include="Combat\MissionHelper.cs" />
-    <Compile Include="CustomMissionLogic\TowAgentMoraleInteractionLogic.cs" />
-    <Compile Include="CustomMissionLogic\TroopAttributeMissionLogic.cs" />
+    <Compile Include="Modules\TroopAttributes\CustomMissionLogic\TowAgentMoraleInteractionLogic.cs" />
+    <Compile Include="Modules\TroopAttributes\CustomMissionLogic\TroopAttributeMissionLogic.cs" />
     <Compile Include="Modules\TroopAttributes\TroopAttributeSubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modules\QuestSubModule.cs" />
     <Compile Include="ObjectManager.cs" />
-    <Compile Include="CustomAgentComponents\HealingAuraAgentComponent.cs" />
-    <Compile Include="CustomAgentComponents\MoraleAgentComponents\UnbreakableMoraleAgentComponent.cs" />
-    <Compile Include="CustomAgentComponents\MoraleAgentComponents\UndeadMoraleAgentComponent.cs" />
+    <Compile Include="Modules\TroopAttributes\CustomAgentComponents\HealingAuraAgentComponent.cs" />
+    <Compile Include="Modules\TroopAttributes\CustomAgentComponents\MoraleAgentComponents\UnbreakableMoraleAgentComponent.cs" />
+    <Compile Include="Modules\TroopAttributes\CustomAgentComponents\MoraleAgentComponents\UndeadMoraleAgentComponent.cs" />
     <Compile Include="Modules\CustomSubModule.cs" />
     <Compile Include="Extensions\AgentExtensions.cs" />
     <Compile Include="Extensions\BasicCharacterObjectExtension.cs" />
