@@ -1,11 +1,11 @@
 ﻿using System;
 using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade;
 
-namespace WarhammerOldWorld
+namespace WarhammerOldWorld.Utility
 {
-    public static class Helpers
+    public static class TowCommon
     {
-        public static Random rng = new Random();
         /// <summary>
         /// Helpers.Say("message") is easier than whatever that is below.
         /// </summary>
@@ -13,6 +13,15 @@ namespace WarhammerOldWorld
         public static void Say(string text)
         {
             InformationManager.DisplayMessage(new InformationMessage(text, new TaleWorlds.Library.Color(134, 114, 250)));
+        }
+
+        /// <summary>
+        /// Get the time elapsed in the current mission.
+        /// </summary>
+        /// <returns>Mission time as a float</returns>
+        public static float GetMissionTime()
+        {
+            return MBCommon.GetTime(MBCommon.TimeType.Mission);
         }
     }
 }
