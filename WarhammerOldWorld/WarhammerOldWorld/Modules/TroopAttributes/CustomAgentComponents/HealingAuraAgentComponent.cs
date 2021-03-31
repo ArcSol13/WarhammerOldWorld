@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using WarhammerOldWorld.Combat;
+using WarhammerOldWorld.Utility;
 
 namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents
 {
     public class HealingAuraAgentComponent : AgentComponent
     {
-        private Timer healTimer;
+        private TowTimer healTimer;
         private readonly Mission currentMission = MissionHelper.GetCurrentMission();
         private float secondsBetweenHealProcs = 5;
         private bool healReady = false;
@@ -18,26 +19,21 @@ namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents
 
         public HealingAuraAgentComponent(Agent agent) : base(agent)
         {
-            healTimer = new Timer(GetHealStartTime(), secondsBetweenHealProcs, true);
+            healTimer = new TowTimer(GetHealStartTime(), secondsBetweenHealProcs, true);
         }
 
         protected override void OnTickAsAI(float dt)
         {
-            healReady = healTimer.Check(MBCommon.GetTime(MBCommon.TimeType.Mission));
+            healReady = healTimer.Check(TowCommon.GetMissionTime());
             if (healReady)
             {
-                IEnumerable<Agent> nearbyAgents = currentMission.GetNearbyAgents(Agent.GetWorldPosition().AsVec2, healRadius);
+                IEnumerable<Agent> nearbyAgents = MissionHelper.GetAgentsAroundPoint(Agent.GetWorldPosition().AsVec2, healRadius);
                 foreach (Agent agent in nearbyAgents)
                 {
                     float maxHitPoints = agent.Character.MaxHitPoints();
                     if (!agent.Team.IsEnemyOf(Agent.Team) && agent.Health != maxHitPoints)
                     {
-                        string origHealth = agent.Health.ToString();
-
-                        //Prevent overhealing with Math.Min
-                        agent.SyncHealthToClient();
                         agent.Heal(healAmount);
-                        //Helpers.Say(Agent.Name + " healed " + agent.Character.Name + " from " + origHealth + " to " + agent.Health);
                     }
                 }
                 healTimer.Reset(MBCommon.GetTime(MBCommon.TimeType.Mission));
@@ -51,7 +47,7 @@ namespace WarhammerOldWorld.Modules.TroopAttributes.CustomAgentComponents
         /// <returns>float between 0 and the healing frequency</returns>
         private float GetHealStartTime()
         {
-            return MBCommon.GetTime(MBCommon.TimeType.Mission) - (float)Helpers.rng.NextDouble() * secondsBetweenHealProcs;
+            return TowCommon.GetMissionTime() - (float)TowMath.GetRandomDouble(0, secondsBetweenHealProcs);
         }
     }
 }

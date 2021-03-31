@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
+using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Source.Missions.Handlers.Logic;
+using TaleWorlds.ObjectSystem;
 using WarhammerOldWorld.Extensions;
 using WarhammerOldWorld.Modules.TroopAttributes.CustomMissionLogic;
 

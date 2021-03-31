@@ -8,14 +8,14 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ObjectSystem;
 
-namespace WarhammerOldWorld
+namespace WarhammerOldWorld.Utility.ObjectManagement
 {
     /// <summary>
     /// Generic Instantiator
     /// </summary>
-    public abstract class ObjectManager<T>  where T : MBObjectBase,new()
+    public abstract class ObjectManager<T> where T : MBObjectBase, new()
     {
-        public ObjectManager() 
+        public ObjectManager()
         {
             //LoadXmls();
         }
@@ -98,7 +98,7 @@ namespace WarhammerOldWorld
         public override Type GetObjectType() => typeof(BasicCharacterObject);
 
         protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "bandits.xml");
-        
+
     }
 
     public class CharacterObjectManager : ObjectManager<CharacterObject>
@@ -197,7 +197,7 @@ namespace WarhammerOldWorld
         }
 
         public override Type GetObjectType() => typeof(Clan);
-        protected override string PathToXML()=> Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "spclans.xml");
+        protected override string PathToXML() => Path.Combine(BasePath.Name, "Modules", "WarhammerOldWorld", "ModuleData", "Data", "spclans.xml");
     }
 
 
