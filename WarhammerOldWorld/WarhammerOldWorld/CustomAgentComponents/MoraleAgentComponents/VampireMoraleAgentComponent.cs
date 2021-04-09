@@ -11,6 +11,8 @@ namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
         private bool canCrumble = false;
 
         private float crumbleFrequencyInSeconds = 1f;
+        
+        private float regenAmount = 1;
 
         public VampireMoraleAgentComponent(Agent agent) : base(agent)
         {
@@ -36,6 +38,12 @@ namespace WarhammerOldWorld.CustomAgentComponents.MoraleAgentComponents
                     this.Agent.Health -= damageTaken;
                     crumbleTimer.Reset(MBCommon.GetTime(MBCommon.TimeType.Mission));
                     Helpers.Say(this.Agent.Name + " took " + damageTaken + " damage from low morale.");
+                }
+                else if (base.Morale > 20f)
+                {
+                    float maxHitPoints = agent.Character.MaxHitPoints();
+                    agent.Health = Math.Min(agent.Health + regenAmount, maxHitPoints);
+                    Helpers.Say(Agent.Name + " regenerated " + agent.Character.Name + " from " + (agent.Health - 1) + " to " + agent.Health);
                 }
             }
         }
